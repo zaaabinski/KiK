@@ -8,6 +8,6 @@ public class Tournament : MonoBehaviour
 
     void Start()
     {
-        Warrior shrek = new Warrior(scriptableObject[0]);
+       // Warrior shrek = new Warrior(scriptableObject[0]);
     }
 }
