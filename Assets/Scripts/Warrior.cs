@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class Warrior : Participant
 {
-   /*Warrior(ParticipantScriptable pS) : base(pS)
+   internal Warrior(ParticipantScriptable pS) : base(pS)
     {
         Debug.Log("Created warrior");
-    }*/
+    }
 }
