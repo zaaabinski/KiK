@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0114bf18811c80441bbdee5004d89773, type: 3}
   m_Name: Konanowicz
   m_EditorClassIdentifier: 
-  pName: 
-  pAbilityName: 
-  pSprite: {fileID: 0}
-  pHP: 0
-  pStrength: 0
-  pAgility: 0
-  pSpeed: 0
-  pWisdom: 0
-  pCharisma: 0
-  pCritChance: 0
+  pName: Kononowicz
+  pAbilityName: "Nie b\u0119dzie niczego"
+  pSprite: {fileID: 21300000, guid: 1da7cc8871f58374bbcff19bbfdde50e, type: 3}
+  pHP: 350
+  pStrength: 10
+  pAgility: 1
+  pSpeed: 1
+  pWisdom: 20
+  pCharisma: 4
+  pCritChance: 15
