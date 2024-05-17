@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0114bf18811c80441bbdee5004d89773, type: 3}
+  m_Name: Pepe
+  m_EditorClassIdentifier: 
+  pName: Pepe
+  pAbilityName: Feels Good Man
+  pSprite: {fileID: 21300000, guid: 4a4a2786a2e6f3742bb4da493de24afc, type: 3}
+  pHP: 100
+  pStrength: 5
+  pAgility: 10
+  pSpeed: 5
+  pWisdom: 1
+  pCharisma: 2
+  pCritChance: 30

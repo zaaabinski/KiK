@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0114bf18811c80441bbdee5004d89773, type: 3}
+  m_Name: Blanka
+  m_EditorClassIdentifier: 
+  pName: Blanka
+  pAbilityName: BEJBA ITS KAJDA KREJZA
+  pSprite: {fileID: 21300000, guid: a8eb8af5e97a6c7409a6160939d1096c, type: 3}
+  pHP: 150
+  pStrength: 5
+  pAgility: 10
+  pSpeed: 10
+  pWisdom: 5
+  pCharisma: 15
+  pCritChance: 15
