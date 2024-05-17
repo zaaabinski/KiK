@@ -41,3 +41,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Pudzian
+    uniqueID: 1869645813
+    locked: 0
+  - name: Budynek
+    uniqueID: 1594836477
+    locked: 0
