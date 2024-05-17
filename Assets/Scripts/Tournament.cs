@@ -1,70 +1,114 @@
-using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
-
+using System.Collections;
+using Mono.Cecil.Cil;
+using Unity.VisualScripting;
 using UnityEngine.UI;
+using Random = UnityEngine.Random;
+using Unity.Burst.CompilerServices;
+
 public class Tournament : MonoBehaviour
 {
-    [SerializeField] private List<ParticipantScriptable> warriorScricptable=new List<ParticipantScriptable>();
-    [SerializeField] private List<Warrior> WarriorsList=new List<Warrior>(); 
-    [SerializeField] private List<Image> imgListW=new List<Image>();
-
+    [SerializeField] private GameObject[] currentRound;
+    [SerializeField] private Image[] Round;
+    private int round = 0;
+    [SerializeField] private List<ParticipantScriptable> warriorScricptable = new List<ParticipantScriptable>();
     [SerializeField] private List<ParticipantScriptable> mageScriptable = new List<ParticipantScriptable>();
-    [SerializeField] private List<Mage> MagesList = new List<Mage>();
-    [SerializeField] private List<Image> imgListM = new List<Image>();
-
-    [SerializeField] private List<ParticipantScriptable> rougeScriptable=new List<ParticipantScriptable>();
-    [SerializeField] private List<Rouge> RougesList = new List<Rouge>();
-    [SerializeField] private List<Image> imgListR = new List<Image>();
-
+    [SerializeField] private List<ParticipantScriptable> rougeScriptable = new List<ParticipantScriptable>();
     [SerializeField] private List<ParticipantScriptable> bardScriptable = new List<ParticipantScriptable>();
-    [SerializeField] private List<Bard> BardsList = new List<Bard>();
-    [SerializeField] private List<Image> imgListB = new List<Image>();
+    [SerializeField] private List<Participant> particpantList = new List<Participant>();
+    [SerializeReference] public List<Participant> tournamentList = new List<Participant>();
+    [SerializeField] private List<int> idList = new List<int>();
 
     void Start()
     {
-        CreateWarriorInstance();
-        CreateMageInstance();
+        CreateParticpants();
+        RandomizeParticpantsId();
+        GetImages(currentRound[round]);
+        NextRound();
+        GetImages(currentRound[round]);
     }
-    
-    void CreateWarriorInstance()
+
+    void NextRound()
     {
-        for (int i=0;i<warriorScricptable.Count;i++)
+        for (int i = 15; i > 0; i -= 2)
         {
-           WarriorsList.Add(new Warrior(warriorScricptable[i]));
-           GameObject warriorObject = new GameObject("Warrior" + i);
-           imgListW[i].sprite = WarriorsList[i].sprite;
+            idList.RemoveAt(i);
+            tournamentList.RemoveAt(i);
+        }
+        for (int i = 0; i < 8; i++)
+        {
+            Debug.Log(tournamentList[i].name);
         }
     }
 
-    void CreateMageInstance()
+    void RandomizeParticpantsId()
     {
-        for (int i=0;i<mageScriptable.Count;i++)
+        bool canAdd = true;
+        while (idList.Count < 16)
         {
-            MagesList.Add(new Mage(mageScriptable[i]));
-            GameObject mageObject = new GameObject("Mage" + i);
-            imgListM[i].sprite = MagesList[i].sprite;
+            canAdd = true;
+            int rand = Random.Range(0, 16);
+            for (int i = 0; i < idList.Count; i++)
+            {
+                if (idList[i] == rand)
+                {
+                    canAdd = false;
+                    break;
+                }
+            }
+
+            if (canAdd)
+            {
+                idList.Add(rand);
+            }
+        }
+
+        for (int i = 0; i < idList.Count; i++)
+        {
+            for (int j = 0; j < particpantList.Count; j++)
+            {
+                if (particpantList[j].id == idList[i])
+                {
+                    tournamentList.Add(particpantList[j]);
+                    break;
+                }
+            }
+        }
+        for(int i = 0;i<16;i++)
+        {
+            Debug.Log(tournamentList[i].name);
         }
     }
 
-    void CreateRougeInstance()
+
+    void GetImages(GameObject currentRound)
     {
-        for (int i = 0; i < rougeScriptable.Count; i++)
+        Debug.Log(tournamentList.Count);
+        Round = new Image[tournamentList.Count];
+        Round = currentRound.GetComponentsInChildren<Image>();
+        for (int i = 0; i < tournamentList.Count; i++)
         {
-            RougesList.Add(new Rouge(rougeScriptable[i]));
-            GameObject rougeObject = new GameObject("Rouge" + i);
-            imgListR[i].sprite = RougesList[i].sprite;
+            for (int j = 0; j < idList.Count; j++)
+            {
+                if (idList[j] == tournamentList[i].id)
+                {
+                    Round[i].sprite = tournamentList[j].sprite;
+                }
+            }
         }
+       round++;
     }
 
-    void CreateBardInstance()
+    void CreateParticpants()
     {
-        for (int i = 0; i < rougeScriptable.Count; i++)
+        for (int i = 0; i < 4; i++)
         {
-            BardsList.Add(new Bard(bardScriptable[i]));
-            GameObject bardObject = new GameObject("Bard" + i);
-            imgListB[i].sprite = BardsList[i].sprite;
+            particpantList.Add(new Warrior(warriorScricptable[i]));
+            particpantList.Add(new Bard(bardScriptable[i]));
+            particpantList.Add(new Mage(mageScriptable[i]));
+            particpantList.Add(new Rouge(rougeScriptable[i]));
         }
     }
-
 }

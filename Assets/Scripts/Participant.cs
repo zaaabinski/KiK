@@ -1,8 +1,10 @@
 using JetBrains.Annotations;
 using UnityEngine;
 
-public abstract class Participant
+public  class Participant
 {
+    internal static int pID=-1;
+    internal int id;
     internal string name;
     internal string abilityName;
     internal Sprite sprite;
@@ -21,9 +23,17 @@ public abstract class Participant
 
     internal Participant(ParticipantScriptable obj)
     {
+        pID ++;
+        this.id = pID;
         this.name = obj.name;
         this.sprite = obj.pSprite;
         this.abilityName = obj.pAbilityName;
+        this.hp=obj.pHP;
         this.strength = obj.pStrength;
+        this.agility = obj.pAgility;
+        this.wisdom = obj.pWisdom;
+        this.spd = obj.pSpeed;
+        this.charisma=obj.pCharisma;
+        this.critChance=obj.pCritChance;
     }
 }
