@@ -1,15 +1,12 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
-using System.Collections;
-using Mono.Cecil.Cil;
-using Unity.VisualScripting;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
-using Unity.Burst.CompilerServices;
 
 public class Tournament : MonoBehaviour
 {
+    [SerializeField] private Duel duelScript;
+
     [SerializeField] private GameObject[] currentRound;
     [SerializeField] private Image[] Round;
     private int round = 0;
@@ -25,19 +22,40 @@ public class Tournament : MonoBehaviour
     [SerializeField] private List<Sprite> maklowicz = new List<Sprite>();
 
 
+
+    private void Awake()
+    {
+        duelScript = GetComponent<Duel>();
+    }
+
     void Start()
     {
         CreateParticpants();
         MaklowiczMood();
         RandomizeParticpantsId();
         GetImages(currentRound[round]);
-        NextRound();
-        GetImages(currentRound[round]);
+        
+        Debug.Log(tournamentList[0].id);
+        Debug.Log(idList[0]);
+        Debug.Log(tournamentList[1].id);
+        Debug.Log(idList[1]);
+
+        int a = duelScript.DuelOfTheFates(tournamentList[0], tournamentList[1]);
+        for (int i=0; i<tournamentList.Count; i++) 
+        {
+            if (tournamentList[i].id==a)
+            {
+                tournamentList.RemoveAt(i);
+                idList.RemoveAt(i);
+                Debug.Log(a);
+            }
+        }
+        
     }
 
     void MaklowiczMood()
     {
-        int rand = Random.Range(0, 5);
+        int rand = Random.Range(0, 6);
         TamGdzieWspanialyCzlowiekRezyduje.sprite = maklowicz[rand];
     }
 
@@ -117,9 +135,9 @@ public class Tournament : MonoBehaviour
         for (int i = 0; i < 4; i++)
         {
             particpantList.Add(new Warrior(warriorScricptable[i]));
-            particpantList.Add(new Bard(bardScriptable[i]));
             particpantList.Add(new Mage(mageScriptable[i]));
             particpantList.Add(new Rouge(rougeScriptable[i]));
+            particpantList.Add(new Bard(bardScriptable[i]));
         }
     }
 }
