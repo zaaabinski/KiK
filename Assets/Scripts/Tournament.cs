@@ -43,12 +43,13 @@ public class Tournament : MonoBehaviour
 
     void StartRound()
     {
+        idToDelte.Clear();
         for (int i = 0; i < tournamentList.Count; i += 2)
         {
             int deletedID = duelScript.DuelOfTheFates(tournamentList[i], tournamentList[i + 1]);
             idToDelte.Add(deletedID);
         }
-
+        
         for (int j = 0; j < idToDelte.Count; j++)
         {
             Debug.Log("Deleting " + j);

@@ -5,7 +5,10 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/Menu.unity
+    guid: 6bcd06ea1b85042458d7d79e801e8d77
+  - enabled: 1
+    path: Assets/Scenes/Tournament Brackets.unity
+    guid: f4828ac1f31daf94881342c5e595dff5
   m_configObjects: {}
