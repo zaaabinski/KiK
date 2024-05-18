@@ -15,10 +15,10 @@ MonoBehaviour:
   pName: Ricardo Milos
   pAbilityName: Dancinnn
   pSprite: {fileID: 21300000, guid: e5d9e579f9a890248a2f362f3c675d53, type: 3}
-  pHP: 125
+  pHP: 100
   pStrength: 5
   pAgility: 20
-  pSpeed: 15
+  pSpeed: 3
   pWisdom: 6
   pCharisma: 10
   pCritChance: 30
