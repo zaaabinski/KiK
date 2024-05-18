@@ -36,4 +36,8 @@ public  class Participant
         this.charisma=obj.pCharisma;
         this.critChance=obj.pCritChance;
     }
+
+    //atak podstawy
+    //atak mocny
+    //krzyk (przez barda nadpisany)
 }
