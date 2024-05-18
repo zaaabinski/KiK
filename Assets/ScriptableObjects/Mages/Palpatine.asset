@@ -18,7 +18,7 @@ MonoBehaviour:
   pHP: 100
   pStrength: 1
   pAgility: 10
-  pSpeed: 8
+  pSpeed: 3
   pWisdom: 20
   pCharisma: 2
   pCritChance: 15

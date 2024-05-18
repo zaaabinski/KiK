@@ -15,10 +15,10 @@ MonoBehaviour:
   pName: Talar
   pAbilityName: "Siedz\u0119 cicho i wcianam ziemniaki"
   pSprite: {fileID: 21300000, guid: 097ef10c6c430a544b3ded5afd25c2ba, type: 3}
-  pHP: 125
+  pHP: 100
   pStrength: 5
   pAgility: 16
-  pSpeed: 14
+  pSpeed: 4
   pWisdom: 7
   pCharisma: 15
   pCritChance: 30

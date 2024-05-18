@@ -2,26 +2,30 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
+using System.Linq;
 
 public class Tournament : MonoBehaviour
 {
-    [SerializeField] private Duel duelScript;
+    private Duel duelScript;
 
+    [SerializeField] private Image winnerImage;
     [SerializeField] private GameObject[] currentRound;
-    [SerializeField] private Image[] Round;
+    private Image[] imageRoundList;
     private int round = 0;
+
     [SerializeField] private List<ParticipantScriptable> warriorScricptable = new List<ParticipantScriptable>();
     [SerializeField] private List<ParticipantScriptable> mageScriptable = new List<ParticipantScriptable>();
     [SerializeField] private List<ParticipantScriptable> rougeScriptable = new List<ParticipantScriptable>();
     [SerializeField] private List<ParticipantScriptable> bardScriptable = new List<ParticipantScriptable>();
-    [SerializeField] private List<Participant> particpantList = new List<Participant>();
-    [SerializeReference] public List<Participant> tournamentList = new List<Participant>();
+
+    private List<Participant> particpantList = new List<Participant>();
+    private List<Participant> tournamentList = new List<Participant>();
+
     [SerializeField] private List<int> idList = new List<int>();
+    [SerializeField] private List<int> idToDelte = new List<int>();
 
-    [SerializeField] private Image TamGdzieWspanialyCzlowiekRezyduje;
     [SerializeField] private List<Sprite> maklowicz = new List<Sprite>();
-
-
+    [SerializeField] private Image TamGdzieWspanialyCzlowiekRezyduje;
 
     private void Awake()
     {
@@ -34,41 +38,41 @@ public class Tournament : MonoBehaviour
         MaklowiczMood();
         RandomizeParticpantsId();
         GetImages(currentRound[round]);
-        
-        Debug.Log(tournamentList[0].id);
-        Debug.Log(idList[0]);
-        Debug.Log(tournamentList[1].id);
-        Debug.Log(idList[1]);
+        StartRound();
+    }
 
-        int a = duelScript.DuelOfTheFates(tournamentList[0], tournamentList[1]);
-        for (int i=0; i<tournamentList.Count; i++) 
+    void StartRound()
+    {
+        for (int i = 0; i < tournamentList.Count; i += 2)
         {
-            if (tournamentList[i].id==a)
+            int deletedID = duelScript.DuelOfTheFates(tournamentList[i], tournamentList[i + 1]);
+            idToDelte.Add(deletedID);
+        }
+
+        for (int j = 0; j < idToDelte.Count; j++)
+        {
+            Debug.Log("Deleting " + j);
+            for (int i = tournamentList.Count - 1; i >= 0; i--)
             {
-                tournamentList.RemoveAt(i);
-                idList.RemoveAt(i);
-                Debug.Log(a);
+                if (idToDelte[j] == tournamentList[i].id)
+                {
+                    tournamentList.RemoveAt(i);
+                    idList.RemoveAt(i);
+                    break;
+                }
             }
         }
-        
-    }
 
-    void MaklowiczMood()
-    {
-        int rand = Random.Range(0, 6);
-        TamGdzieWspanialyCzlowiekRezyduje.sprite = maklowicz[rand];
-    }
-
-    void NextRound()
-    {
-        for (int i = 15; i > 0; i -= 2)
+        if (round < 3)
         {
-            idList.RemoveAt(i);
-            tournamentList.RemoveAt(i);
+            round++;
+            GetImages(currentRound[round]);
+            StartRound();
         }
-        for (int i = 0; i < 8; i++)
+        else if (round == 3)
         {
-            Debug.Log(tournamentList[i].name);
+            Debug.Log(tournamentList[0].name + " Wins!");
+            winnerImage.sprite = tournamentList[0].sprite;
         }
     }
 
@@ -105,29 +109,24 @@ public class Tournament : MonoBehaviour
                 }
             }
         }
-        for(int i = 0;i<16;i++)
-        {
-            Debug.Log(tournamentList[i].name);
-        }
     }
 
 
     void GetImages(GameObject currentRound)
     {
         Debug.Log(tournamentList.Count);
-        Round = new Image[tournamentList.Count];
-        Round = currentRound.GetComponentsInChildren<Image>();
+        imageRoundList = new Image[tournamentList.Count];
+        imageRoundList = currentRound.GetComponentsInChildren<Image>();
         for (int i = 0; i < tournamentList.Count; i++)
         {
             for (int j = 0; j < idList.Count; j++)
             {
                 if (idList[j] == tournamentList[i].id)
                 {
-                    Round[i].sprite = tournamentList[j].sprite;
+                    imageRoundList[i].sprite = tournamentList[j].sprite;
                 }
             }
         }
-       round++;
     }
 
     void CreateParticpants()
@@ -139,5 +138,11 @@ public class Tournament : MonoBehaviour
             particpantList.Add(new Rouge(rougeScriptable[i]));
             particpantList.Add(new Bard(bardScriptable[i]));
         }
+    }
+
+    void MaklowiczMood()
+    {
+        int rand = Random.Range(0, 6);
+        TamGdzieWspanialyCzlowiekRezyduje.sprite = maklowicz[rand];
     }
 }
