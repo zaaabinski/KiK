@@ -21,13 +21,24 @@ public class Tournament : MonoBehaviour
     [SerializeReference] public List<Participant> tournamentList = new List<Participant>();
     [SerializeField] private List<int> idList = new List<int>();
 
+    [SerializeField] private Image TamGdzieWspanialyCzlowiekRezyduje;
+    [SerializeField] private List<Sprite> maklowicz = new List<Sprite>();
+
+
     void Start()
     {
         CreateParticpants();
+        MaklowiczMood();
         RandomizeParticpantsId();
         GetImages(currentRound[round]);
         NextRound();
         GetImages(currentRound[round]);
+    }
+
+    void MaklowiczMood()
+    {
+        int rand = Random.Range(0, 5);
+        TamGdzieWspanialyCzlowiekRezyduje.sprite = maklowicz[rand];
     }
 
     void NextRound()
