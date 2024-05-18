@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="6bdc620f-1fb2-496d-9c6c-2140762a631b" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/Assets/PImages.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PImages/Blanka.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PImages/Blanka.jpg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PImages/Gandalf.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PImages/Gandalf.jpg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PImages/Giga chad.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PImages/Giga chad.jpg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PImages/KIJ-BASEBALLOWY-BAT-DREWNIANY-34-86-cm-NATURALNY-BEJSBOLOWY-Pewny-CHWYT.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PImages/KIJ-BASEBALLOWY-BAT-DREWNIANY-34-86-cm-NATURALNY-BEJSBOLOWY-Pewny-CHWYT.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PImages/Konon.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PImages/Konon.jpg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PImages/Kubota.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PImages/Kubota.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PImages/Kurt Cobain.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PImages/Kurt Cobain.jpg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PImages/Major.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PImages/Major.jpg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PImages/NyanCat.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PImages/NyanCat.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PImages/Palpatine.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PImages/Palpatine.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PImages/Pepe.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PImages/Pepe.jpg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PImages/Piesek.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PImages/Piesek.jpg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PImages/Pudziany.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PImages/Pudziany/Pudzian 1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PImages/Pudziany/Pudzian 1.jpg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PImages/Pudziany/Pudzian 2_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PImages/Pudziany/Pudzian 2_1.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PImages/Pudziany/Pudzian bez tła.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PImages/Pudziany/Pudzian bez tła.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PImages/Pudziany/Pudzian.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PImages/Pudziany/Pudzian.jpg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PImages/Pudziany/Tło do menu.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PImages/Pudziany/Tło do menu.jpg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PImages/Pudziany/Tło.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PImages/Pudziany/Tło.jpg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PImages/RicardoMilos.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PImages/RicardoMilos.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PImages/StachuJones.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PImages/StachuJones.jpg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PImages/Talar.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PImages/Talar.jpg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PImages/rick-astley.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PImages/rick-astley.jpg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PImages/shrek.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PImages/shrek.jpg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Scene2.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Scene2.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Participant.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Participant.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tournament.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tournament.cs" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 3
+}]]></component>
+  <component name="ProjectId" id="2gbiLJrbnj0AQlWRsevb6gx1aLs" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "rider.external.source.directories": [
+      "C:\\Users\\Zaaabinski\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\DecompilerCache",
+      "C:\\Users\\Zaaabinski\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\SourcesCache",
+      "C:\\Users\\Zaaabinski\\AppData\\Local\\Symbols\\src"
+    ]
+  }
+}]]></component>
+  <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+    <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
+      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2022.2.8f1\Editor\Unity.exe" />
+      <option name="PROGRAM_PARAMETERS" value="-projectPath C:\GitHub\KiK -debugCodeOptimization" />
+      <option name="WORKING_DIRECTORY" value="C:\GitHub\KiK" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Unit Tests (batch mode)" type="RunUnityExe" factoryName="Unity Executable">
+      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2022.2.8f1\Editor\Unity.exe" />
+      <option name="PROGRAM_PARAMETERS" value="-runTests -batchmode -projectPath C:\GitHub\KiK -testResults Logs/results.xml -testPlatform EditMode -debugCodeOptimization" />
+      <option name="WORKING_DIRECTORY" value="C:\GitHub\KiK" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <option name="projectPathOnTarget" />
+      <option name="selectedOptions">
+        <list />
+      </option>
+      <method v="2" />
+    </configuration>
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <option name="projectPathOnTarget" />
+      <option name="selectedOptions">
+        <list />
+      </option>
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6bdc620f-1fb2-496d-9c6c-2140762a631b" name="Changes" comment="" />
+      <created>1715972624307</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1715972624307</updated>
+      <workItem from="1715972632200" duration="6755000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="Both" />
+  <component name="VcsManagerConfiguration">
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+</project>
