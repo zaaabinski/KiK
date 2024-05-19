@@ -15,10 +15,10 @@ MonoBehaviour:
   pName: Gandalf
   pAbilityName: YOU SHALL NOT PASS
   pSprite: {fileID: 21300000, guid: ea80e5e62e5447f438fe742b9715a4ee, type: 3}
-  pHP: 100
-  pStrength: 5
+  pHP: 300
+  pStrength: 1
   pAgility: 10
-  pSpeed: 1
+  pSpeed: 8
   pWisdom: 20
-  pCharisma: 10
+  pCharisma: 16
   pCritChance: 15

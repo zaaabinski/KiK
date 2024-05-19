@@ -15,10 +15,10 @@ MonoBehaviour:
   pName: Nyan Cat
   pAbilityName: TASTE THE RAINBOW
   pSprite: {fileID: 21300000, guid: 65154c069f4c4f442b201f756caeb508, type: 3}
-  pHP: 100
-  pStrength: 5
-  pAgility: 10
-  pSpeed: 3
-  pWisdom: 10
+  pHP: 400
+  pStrength: 1
+  pAgility: 12
+  pSpeed: 20
+  pWisdom: 4
   pCharisma: 18
   pCritChance: 15
