@@ -19,12 +19,12 @@ public class Duel : MonoBehaviour
 
         while (true)
         {
-            Fighter[1].hp -= Random.Range(0,16);
+            Fighter[1].hp -= Fighter[0].Move();
             if (Fighter[1].hp <= 0)
             {
                 return Fighter[1].id;
             }
-            Fighter[0].hp -= Random.Range(0, 16); 
+            Fighter[0].hp -= Fighter[1].Move(); 
             if (Fighter[0].hp <= 0)
             {
                 return Fighter[0].id;

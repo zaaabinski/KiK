@@ -15,10 +15,10 @@ MonoBehaviour:
   pName: Pudzian
   pAbilityName: Cios na karpia
   pSprite: {fileID: 21300000, guid: bf54b8fbd433d64479c8842b0d383888, type: 3}
-  pHP: 100
+  pHP: 500
   pStrength: 20
-  pAgility: 6
-  pSpeed: 3
-  pWisdom: 1
-  pCharisma: 4
+  pAgility: 12
+  pSpeed: 13
+  pWisdom: 3
+  pCharisma: 7
   pCritChance: 15

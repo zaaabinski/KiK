@@ -52,7 +52,6 @@ public class Tournament : MonoBehaviour
         
         for (int j = 0; j < idToDelte.Count; j++)
         {
-            Debug.Log("Deleting " + j);
             for (int i = tournamentList.Count - 1; i >= 0; i--)
             {
                 if (idToDelte[j] == tournamentList[i].id)

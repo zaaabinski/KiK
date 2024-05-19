@@ -15,10 +15,10 @@ MonoBehaviour:
   pName: Rick Astley
   pAbilityName: Never gonna give you up
   pSprite: {fileID: 21300000, guid: eedcd4d03de317c4e8db7291c4454086, type: 3}
-  pHP: 100
-  pStrength: 5
-  pAgility: 14
-  pSpeed: 1
-  pWisdom: 10
+  pHP: 400
+  pStrength: 4
+  pAgility: 12
+  pSpeed: 10
+  pWisdom: 9
   pCharisma: 20
   pCritChance: 15

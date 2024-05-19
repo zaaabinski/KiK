@@ -15,10 +15,10 @@ MonoBehaviour:
   pName: PiesChad
   pAbilityName: BONK - go to horny jail
   pSprite: {fileID: 21300000, guid: 50c4082bb64dd844b85ce4fe474a01ac, type: 3}
-  pHP: 100
+  pHP: 500
   pStrength: 18
-  pAgility: 10
-  pSpeed: 2
-  pWisdom: 10
-  pCharisma: 15
+  pAgility: 14
+  pSpeed: 12
+  pWisdom: 1
+  pCharisma: 10
   pCritChance: 15
