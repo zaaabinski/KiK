@@ -15,7 +15,7 @@ MonoBehaviour:
   pName: Major
   pAbilityName: Magiczny wywar znikania
   pSprite: {fileID: 21300000, guid: f48a29c61f0ae12489d080aaca677ebe, type: 3}
-  pHP: 200
+  pMaxHP: 200
   pStrength: 3
   pAgility: 20
   pSpeed: 16
