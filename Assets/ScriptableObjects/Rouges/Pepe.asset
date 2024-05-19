@@ -15,7 +15,7 @@ MonoBehaviour:
   pName: Pepe
   pAbilityName: Feels Good Man
   pSprite: {fileID: 21300000, guid: 4a4a2786a2e6f3742bb4da493de24afc, type: 3}
-  pHP: 200
+  pMaxHP: 200
   pStrength: 2
   pAgility: 18
   pSpeed: 14

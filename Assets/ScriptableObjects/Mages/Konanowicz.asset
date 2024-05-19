@@ -15,7 +15,7 @@ MonoBehaviour:
   pName: Kononowicz
   pAbilityName: "Nie b\u0119dzie niczego"
   pSprite: {fileID: 21300000, guid: 1da7cc8871f58374bbcff19bbfdde50e, type: 3}
-  pHP: 300
+  pMaxHP: 300
   pStrength: 12
   pAgility: 10
   pSpeed: 3

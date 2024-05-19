@@ -12,6 +12,7 @@ public  class Participant
 
     internal int dmg;
     internal int hp;
+    internal int maxHP;
     internal int strength;
     internal int agility;
     internal int spd;
@@ -34,7 +35,8 @@ public  class Participant
         this.name = obj.name;
         this.sprite = obj.pSprite;
         this.abilityName = obj.pAbilityName;
-        this.hp=obj.pHP;
+        this.hp=obj.pMaxHP;
+        this.maxHP = obj.pMaxHP;
         this.strength = obj.pStrength;
         this.agility = obj.pAgility;
         this.wisdom = obj.pWisdom;

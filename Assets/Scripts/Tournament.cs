@@ -47,6 +47,14 @@ public class Tournament : MonoBehaviour
         for (int i = 0; i < tournamentList.Count; i += 2)
         {
             int deletedID = duelScript.DuelOfTheFates(tournamentList[i], tournamentList[i + 1]);
+            if (tournamentList[i].id!=deletedID)
+            {
+                ColdBeerToRefillYourWillToFight(tournamentList[i]);
+            }
+            else
+            {
+                ColdBeerToRefillYourWillToFight(tournamentList[i + 1]);
+            }
             idToDelte.Add(deletedID);
         }
         
@@ -74,6 +82,11 @@ public class Tournament : MonoBehaviour
             Debug.Log(tournamentList[0].name + " Wins!");
             winnerImage.sprite = tournamentList[0].sprite;
         }
+    }
+
+    void ColdBeerToRefillYourWillToFight(Participant BraveGladiator)
+    {
+        BraveGladiator.hp = BraveGladiator.maxHP;
     }
 
     void RandomizeParticpantsId()
