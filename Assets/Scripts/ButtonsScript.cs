@@ -6,7 +6,7 @@ public class ButtonsScript : MonoBehaviour
 {
     public void ChangeScene()
     {
-        SceneManager.LoadScene(1);
+        StartCoroutine(ReallySophisticatedAndComplicatedAlghorytyhmForDelayingAsMuchTimeAsPossible());
     }
 
     public void QuitGame()
@@ -14,5 +14,10 @@ public class ButtonsScript : MonoBehaviour
         Application.Quit();
         Debug.Log("NAURA");
     }
-    
+ 
+    IEnumerator ReallySophisticatedAndComplicatedAlghorytyhmForDelayingAsMuchTimeAsPossible()
+    {
+        yield return new WaitForSeconds(0.95f);
+        SceneManager.LoadScene(1);
+    }
 }
