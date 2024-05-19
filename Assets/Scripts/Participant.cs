@@ -49,12 +49,15 @@ public  class Participant
 
         int hitChance = Random.Range(0, 101);
 
+        int dealtDamage;
+
         if (rand>0&&rand <51)
         {
             if (hitChance <= this.agility * 5)
             {
-                Debug.Log("Basic "+this.name + " HP: " + this.hp);
-                return BasicAttack();
+                dealtDamage = BasicAttack();
+                Debug.Log("Basic "+this.name + " HP: " + this.hp + " Damage " + dealtDamage);
+                return dealtDamage;
             }
             Debug.Log("Miss! " + this.name);
             return 0;
@@ -63,8 +66,9 @@ public  class Participant
         {
             if (hitChance <= this.agility * 4)
             {
-                Debug.Log("Strong "+ this.name + " HP: " + this.hp);
-                return StrongAttack();
+                dealtDamage= StrongAttack();
+                Debug.Log("Strong "+ this.name + " HP: " + this.hp + " Damage " + dealtDamage);
+                return dealtDamage;
             }
             Debug.Log("Miss! " + this.name);
             return 0;
@@ -73,8 +77,9 @@ public  class Participant
         {
             if (hitChance <= this.agility * 5)
             {
-                Debug.Log("Scream "+ this.name + " HP: "+this.hp);
-                return ScreamAttack();
+                dealtDamage= ScreamAttack();
+                Debug.Log("Scream "+ this.name + " HP: "+this.hp+ " Damage " + dealtDamage);
+                return dealtDamage;
             }
             Debug.Log("Miss! " + this.name);
             return 0;
