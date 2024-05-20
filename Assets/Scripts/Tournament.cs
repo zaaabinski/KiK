@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
-using System.Linq;
+using System.IO;
 
 public class Tournament : MonoBehaviour
 {
@@ -12,6 +12,7 @@ public class Tournament : MonoBehaviour
     [SerializeField] private GameObject[] currentRound;
     [SerializeField] private Image[] imageRoundList;
     private int round = 0;
+    public static int numberOfSimulations = 0;
 
     [SerializeField] private List<ParticipantScriptable> warriorScricptable = new List<ParticipantScriptable>();
     [SerializeField] private List<ParticipantScriptable> mageScriptable = new List<ParticipantScriptable>();
@@ -37,6 +38,7 @@ public class Tournament : MonoBehaviour
     void Start()
     {
         Participant.pID = -1;
+        numberOfSimulations++;
         round = 0;
         tournamentList.Clear();
         CreateParticpants();
@@ -44,6 +46,20 @@ public class Tournament : MonoBehaviour
         RandomizeParticpantsId();
         GetImages(currentRound[round]);
         StartRound();
+        var fileLocation = "SimulationFile.txt";
+        
+        Debug.Log(idList[0]);
+        Debug.Log(tournamentList[0].name);
+        Debug.Log(tournamentList[0].GetType());
+        Debug.Log(numberOfSimulations);
+        if (File.Exists(fileLocation))
+        {
+            using (StreamWriter writer = new StreamWriter(fileLocation, append:true))
+            {
+                writer.WriteLine(idList[0] + ";" + tournamentList[0].name + ";" + tournamentList[0].GetType()+";"+numberOfSimulations);
+            }
+        }
+
     }
 
     void StartRound()
