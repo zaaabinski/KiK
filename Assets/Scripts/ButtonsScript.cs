@@ -16,7 +16,7 @@ public class ButtonsScript : MonoBehaviour
 
     IEnumerator ReallySophisticatedAndComplicatedAlghorytyhmForDelayingAsMuchTimeAsPossible()
     {
-        yield return new WaitForSeconds(0.95f);
+        yield return new WaitForSeconds(3.2f);
         SceneManager.LoadScene(1);
     }
 
