@@ -1,7 +1,7 @@
 using JetBrains.Annotations;
 using UnityEngine;
 
-public  class Participant
+public abstract class Participant
 {
 
     internal static int pID=-1;
@@ -93,20 +93,10 @@ public  class Participant
         }
     }
 
-    internal virtual int  BasicAttack()
-    {
-        return dmg;
-    }
+    internal abstract int BasicAttack();
+    internal abstract int StrongAttack();
 
-    internal virtual int StrongAttack() 
-    {
-        return dmg;
-    }
-
-    internal virtual int ScreamAttack()
-    {
-        return dmg;
-    }
+    internal abstract int ScreamAttack();
 
     internal virtual int SpecialAbility()
     {

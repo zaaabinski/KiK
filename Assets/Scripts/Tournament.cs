@@ -10,7 +10,7 @@ public class Tournament : MonoBehaviour
 
     [SerializeField] private Image winnerImage;
     [SerializeField] private GameObject[] currentRound;
-    private Image[] imageRoundList;
+    [SerializeField] private Image[] imageRoundList;
     private int round = 0;
 
     [SerializeField] private List<ParticipantScriptable> warriorScricptable = new List<ParticipantScriptable>();
@@ -34,6 +34,9 @@ public class Tournament : MonoBehaviour
 
     void Start()
     {
+        Participant.pID = -1;
+        round = 0;
+        tournamentList.Clear();
         CreateParticpants();
         MaklowiczMood();
         RandomizeParticpantsId();
@@ -108,16 +111,20 @@ public class Tournament : MonoBehaviour
             if (canAdd)
             {
                 idList.Add(rand);
+                Debug.Log(rand);
             }
         }
 
+       
         for (int i = 0; i < idList.Count; i++)
         {
+            
             for (int j = 0; j < particpantList.Count; j++)
             {
                 if (particpantList[j].id == idList[i])
                 {
                     tournamentList.Add(particpantList[j]);
+                    Debug.Log("Ojoj");
                     break;
                 }
             }
@@ -151,6 +158,7 @@ public class Tournament : MonoBehaviour
             particpantList.Add(new Rouge(rougeScriptable[i]));
             particpantList.Add(new Bard(bardScriptable[i]));
         }
+        Debug.Log("Stworzono zawodnikow");
     }
 
     void MaklowiczMood()
