@@ -14,7 +14,7 @@ public class ButtonsScript : MonoBehaviour
         Application.Quit();
         Debug.Log("NAURA");
     }
- 
+
     IEnumerator ReallySophisticatedAndComplicatedAlghorytyhmForDelayingAsMuchTimeAsPossible()
     {
         yield return new WaitForSeconds(0.95f);
