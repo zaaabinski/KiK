@@ -27,6 +27,8 @@ public class Tournament : MonoBehaviour
     [SerializeField] private List<Sprite> maklowicz = new List<Sprite>();
     [SerializeField] private Image TamGdzieWspanialyCzlowiekRezyduje;
 
+    [SerializeField] private Sprite Skull;
+
     private void Awake()
     {
         duelScript = GetComponent<Duel>();
@@ -53,6 +55,7 @@ public class Tournament : MonoBehaviour
             if (tournamentList[i].id!=deletedID)
             {
                 ColdBeerToRefillYourWillToFight(tournamentList[i]);
+
             }
             else
             {
