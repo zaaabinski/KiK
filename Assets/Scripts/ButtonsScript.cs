@@ -2,9 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class ButtonsScript : MonoBehaviour
 {
+    [SerializeField] private List<Sprite> MapList= new List<Sprite>();
+    [SerializeField] private Image MapImage;
+    public static int mapIndex = 0;
+
     [SerializeField] internal List<AudioClip> ChangeSceneSounds = new List<AudioClip>();
     [SerializeField] internal List<AudioClip> LeaveGameSounds = new List<AudioClip>();
 
@@ -25,6 +30,18 @@ public class ButtonsScript : MonoBehaviour
     public void BackToMenu()
     {
         StartCoroutine(Teleporting());
+    }
+
+    public void ChangeMapRight()
+    {
+        Debug.Log((++mapIndex) % MapList.Count);
+        MapImage.sprite = MapList[(mapIndex)%MapList.Count];
+        
+    }
+    public void ChangeMapLeft()
+    {
+        Debug.Log((Mathf.Abs(--mapIndex)) % MapList.Count);
+        MapImage.sprite = MapList[(Mathf.Abs(mapIndex))%MapList.Count];
     }
 
     IEnumerator Teleporting()
