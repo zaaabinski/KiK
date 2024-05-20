@@ -11,13 +11,19 @@ public class ButtonsScript : MonoBehaviour
 
     public void QuitGame()
     {
-        Application.Quit();
-        Debug.Log("NAURA");
+        StartCoroutine(MomentBeforeYouRunAwayToYourMother());
     }
 
     IEnumerator ReallySophisticatedAndComplicatedAlghorytyhmForDelayingAsMuchTimeAsPossible()
     {
         yield return new WaitForSeconds(0.95f);
         SceneManager.LoadScene(1);
+    }
+
+    IEnumerator MomentBeforeYouRunAwayToYourMother()
+    {
+        yield return new WaitForSeconds(0.95f);
+        Application.Quit();
+        Debug.Log("NAURA");
     }
 }
