@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -8,7 +9,8 @@ public class ButtonsScript : MonoBehaviour
 {
     [SerializeField] private List<Sprite> MapList= new List<Sprite>();
     [SerializeField] private Image MapImage;
-    public static int mapIndex = 0;
+    [SerializeField] private TextMeshProUGUI textPlace;
+    public int mapIndex = 0;
 
     [SerializeField] internal List<AudioClip> ChangeSceneSounds = new List<AudioClip>();
     [SerializeField] internal List<AudioClip> LeaveGameSounds = new List<AudioClip>();
@@ -34,14 +36,34 @@ public class ButtonsScript : MonoBehaviour
 
     public void ChangeMapRight()
     {
-        Debug.Log((++mapIndex) % MapList.Count);
-        MapImage.sprite = MapList[(mapIndex)%MapList.Count];
-        
+        if (mapIndex+1>=MapList.Count)
+        {
+            mapIndex = 0;
+            MapImage.sprite = MapList[mapIndex];
+            textPlace.text = "\n\n"+MapImage.sprite.name;
+        }
+        else
+        {
+            mapIndex += 1;
+            MapImage.sprite = MapList[mapIndex];
+            textPlace.text = "\n\n" + MapImage.sprite.name;
+        }
+
     }
     public void ChangeMapLeft()
     {
-        Debug.Log((Mathf.Abs(--mapIndex)) % MapList.Count);
-        MapImage.sprite = MapList[(Mathf.Abs(mapIndex))%MapList.Count];
+        if (mapIndex-1 < 0)
+        {
+            mapIndex = MapList.Count-1;
+            MapImage.sprite = MapList[mapIndex];
+            textPlace.text = "\n\n" + MapImage.sprite.name;
+        }
+        else
+        {
+            mapIndex -= 1;
+            MapImage.sprite = MapList[mapIndex];
+            textPlace.text = "\n\n" + MapImage.sprite.name;
+        }
     }
 
     IEnumerator Teleporting()
