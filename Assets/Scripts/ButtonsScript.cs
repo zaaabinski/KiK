@@ -10,7 +10,7 @@ public class ButtonsScript : MonoBehaviour
     [SerializeField] private List<Sprite> MapList= new List<Sprite>();
     [SerializeField] private Image MapImage;
     [SerializeField] private TextMeshProUGUI textPlace;
-    public int mapIndex = 0;
+    private int mapIndex;
 
     [SerializeField] internal List<AudioClip> ChangeSceneSounds = new List<AudioClip>();
     [SerializeField] internal List<AudioClip> LeaveGameSounds = new List<AudioClip>();
@@ -18,6 +18,12 @@ public class ButtonsScript : MonoBehaviour
     [SerializeField] private AudioSource CSSource;
     [SerializeField] private AudioSource QASource;
 
+    public void Start()
+    {
+        mapIndex = 0;
+        MapImage.sprite = MapList[mapIndex];
+        textPlace.text = "\n\n" + MapList[mapIndex].name;
+    }
 
     public void ChangeScene()
     {

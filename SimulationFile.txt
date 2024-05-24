@@ -7,3 +7,5 @@
 11;Nyan Cat;Bard;7
 10;Ricardo Milos;Rouge;8
 11;Nyan Cat;Bard;1
+10;Ricardo Milos;Rouge;1
+11;Nyan Cat;Bard;2
