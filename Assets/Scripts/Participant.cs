@@ -1,4 +1,3 @@
-using JetBrains.Annotations;
 using UnityEngine;
 
 public abstract class Participant
@@ -9,7 +8,6 @@ public abstract class Participant
     internal string name;
     internal string abilityName;
     internal Sprite sprite;
-
     internal int dmg;
     internal int hp;
     internal int maxHP;
@@ -45,7 +43,7 @@ public abstract class Participant
         this.critChance=obj.pCritChance;
     }
 
-    internal int Move()
+    internal void Move(Participant FigtherReceivingDamage)
     {
         int rand=Random.Range(0, 101);
 
@@ -57,46 +55,43 @@ public abstract class Participant
         {
             if (hitChance <= this.agility * 5)
             {
-                dealtDamage = BasicAttack();
+                dealtDamage = BasicAttack(FigtherReceivingDamage);
                 Debug.Log("Basic "+this.name + " HP: " + this.hp + " Damage " + dealtDamage);
-                return dealtDamage;
+                FigtherReceivingDamage.hp= dealtDamage;
             }
             Debug.Log("Miss! " + this.name);
-            return 0;
         }
         else if (rand<75)
         {
             if (hitChance <= this.agility * 4)
             {
-                dealtDamage= StrongAttack();
+                dealtDamage= StrongAttack(FigtherReceivingDamage);
                 Debug.Log("Strong "+ this.name + " HP: " + this.hp + " Damage " + dealtDamage);
-                return dealtDamage;
+                FigtherReceivingDamage.hp = dealtDamage;
             }
             Debug.Log("Miss! " + this.name);
-            return 0;
         }
         else if(rand<85)
         {
             if (hitChance <= this.agility * 5)
             {
-                dealtDamage= ScreamAttack();
+                dealtDamage= ScreamAttack(FigtherReceivingDamage);
                 Debug.Log("Scream "+ this.name + " HP: "+this.hp+ " Damage " + dealtDamage);
-                return dealtDamage;
+                FigtherReceivingDamage.hp = dealtDamage;
             }
             Debug.Log("Miss! " + this.name);
-            return 0;
         }
         else
         {
             Debug.Log("Special "+ this.name + " HP: " + this.hp);
-            return SpecialAbility();
+            FigtherReceivingDamage.hp = SpecialAbility();
         }
     }
 
-    internal abstract int BasicAttack();
-    internal abstract int StrongAttack();
+    internal abstract int BasicAttack(Participant FighterReceivingDamage);
+    internal abstract int StrongAttack(Participant FighterReceivingDamage);
 
-    internal abstract int ScreamAttack();
+    internal abstract int ScreamAttack(Participant FighterReceivingDamage);
 
     internal virtual int SpecialAbility()
     {

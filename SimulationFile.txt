@@ -1,0 +1,7 @@
+14;Talar;Rouge
+5;Stachu Jones;Mage
+11;Nyan Cat;Bard
+6;Pepe;Rouge
+10;Ricardo Milos;Rouge
+9;Palpatine;Mage
+3;Blanka;Bard

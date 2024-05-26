@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
-using System.Linq;
+using System.IO;
 
 public class Tournament : MonoBehaviour
 {
@@ -12,6 +12,7 @@ public class Tournament : MonoBehaviour
     [SerializeField] private GameObject[] currentRound;
     [SerializeField] private Image[] imageRoundList;
     private int round = 0;
+    public static int numberOfSimulations = 0;
 
     [SerializeField] private List<ParticipantScriptable> warriorScricptable = new List<ParticipantScriptable>();
     [SerializeField] private List<ParticipantScriptable> mageScriptable = new List<ParticipantScriptable>();
@@ -27,6 +28,8 @@ public class Tournament : MonoBehaviour
     [SerializeField] private List<Sprite> maklowicz = new List<Sprite>();
     [SerializeField] private Image TamGdzieWspanialyCzlowiekRezyduje;
 
+    [SerializeField] private Sprite Skull;
+
     private void Awake()
     {
         duelScript = GetComponent<Duel>();
@@ -35,6 +38,7 @@ public class Tournament : MonoBehaviour
     void Start()
     {
         Participant.pID = -1;
+        numberOfSimulations++;
         round = 0;
         tournamentList.Clear();
         CreateParticpants();
@@ -42,6 +46,14 @@ public class Tournament : MonoBehaviour
         RandomizeParticpantsId();
         GetImages(currentRound[round]);
         StartRound();
+        SaveToFile();
+    }
+
+    void SaveToFile()
+    {
+        var fileLocation = "SimulationFile.txt";
+        using StreamWriter writer = new(fileLocation, append: true);
+        writer.WriteLine(idList[0] + ";" + tournamentList[0].name + ";" + tournamentList[0].GetType());
     }
 
     void StartRound()
@@ -50,7 +62,7 @@ public class Tournament : MonoBehaviour
         for (int i = 0; i < tournamentList.Count; i += 2)
         {
             int deletedID = duelScript.DuelOfTheFates(tournamentList[i], tournamentList[i + 1]);
-            if (tournamentList[i].id!=deletedID)
+            if (tournamentList[i].id != deletedID)
             {
                 ColdBeerToRefillYourWillToFight(tournamentList[i]);
             }
@@ -60,7 +72,7 @@ public class Tournament : MonoBehaviour
             }
             idToDelte.Add(deletedID);
         }
-        
+
         for (int j = 0; j < idToDelte.Count; j++)
         {
             for (int i = tournamentList.Count - 1; i >= 0; i--)
@@ -115,10 +127,8 @@ public class Tournament : MonoBehaviour
             }
         }
 
-       
         for (int i = 0; i < idList.Count; i++)
         {
-            
             for (int j = 0; j < particpantList.Count; j++)
             {
                 if (particpantList[j].id == idList[i])
@@ -131,12 +141,12 @@ public class Tournament : MonoBehaviour
         }
     }
 
-
     void GetImages(GameObject currentRound)
     {
         Debug.Log(tournamentList.Count);
         imageRoundList = new Image[tournamentList.Count];
         imageRoundList = currentRound.GetComponentsInChildren<Image>();
+
         for (int i = 0; i < tournamentList.Count; i++)
         {
             for (int j = 0; j < idList.Count; j++)
