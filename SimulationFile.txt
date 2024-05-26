@@ -1,11 +1,7 @@
-14;Talar;Rouge;1
-9;Palpatine;Mage;2
-10;Ricardo Milos;Rouge;3
-15;Rick Astley;Bard;4
-9;Palpatine;Mage;5
-6;Pepe;Rouge;6
-11;Nyan Cat;Bard;7
-10;Ricardo Milos;Rouge;8
-11;Nyan Cat;Bard;1
-10;Ricardo Milos;Rouge;1
-11;Nyan Cat;Bard;2
+14;Talar;Rouge
+5;Stachu Jones;Mage
+11;Nyan Cat;Bard
+6;Pepe;Rouge
+10;Ricardo Milos;Rouge
+9;Palpatine;Mage
+3;Blanka;Bard

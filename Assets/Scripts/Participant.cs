@@ -1,4 +1,3 @@
-using JetBrains.Annotations;
 using UnityEngine;
 
 public abstract class Participant
@@ -9,7 +8,6 @@ public abstract class Participant
     internal string name;
     internal string abilityName;
     internal Sprite sprite;
-
     internal int dmg;
     internal int hp;
     internal int maxHP;

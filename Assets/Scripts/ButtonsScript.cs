@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class ButtonsScript : MonoBehaviour
 {
-    [SerializeField] private List<Sprite> MapList= new List<Sprite>();
+    [SerializeField] private List<Sprite> MapList = new List<Sprite>();
     [SerializeField] private Image MapImage;
     [SerializeField] private TextMeshProUGUI textPlace;
     private int mapIndex;
@@ -19,6 +19,14 @@ public class ButtonsScript : MonoBehaviour
     [SerializeField] private AudioSource QASource;
 
     public void Start()
+    {
+        if (SceneManager.GetActiveScene().buildIndex == 2)
+        {
+            CheckIfMapScene();
+        }
+    }
+
+    private void CheckIfMapScene()
     {
         mapIndex = 0;
         MapImage.sprite = MapList[mapIndex];
@@ -42,11 +50,11 @@ public class ButtonsScript : MonoBehaviour
 
     public void ChangeMapRight()
     {
-        if (mapIndex+1>=MapList.Count)
+        if (mapIndex + 1 >= MapList.Count)
         {
             mapIndex = 0;
             MapImage.sprite = MapList[mapIndex];
-            textPlace.text = "\n\n"+MapImage.sprite.name;
+            textPlace.text = "\n\n" + MapImage.sprite.name;
         }
         else
         {
@@ -54,13 +62,13 @@ public class ButtonsScript : MonoBehaviour
             MapImage.sprite = MapList[mapIndex];
             textPlace.text = "\n\n" + MapImage.sprite.name;
         }
-
     }
+
     public void ChangeMapLeft()
     {
-        if (mapIndex-1 < 0)
+        if (mapIndex - 1 < 0)
         {
-            mapIndex = MapList.Count-1;
+            mapIndex = MapList.Count - 1;
             MapImage.sprite = MapList[mapIndex];
             textPlace.text = "\n\n" + MapImage.sprite.name;
         }
@@ -76,16 +84,16 @@ public class ButtonsScript : MonoBehaviour
     {
         QASource.clip = LeaveGameSounds[1];
         QASource.Play();
-        yield return new WaitForSeconds(LeaveGameSounds[1].length+0.2f);
+        yield return new WaitForSeconds(LeaveGameSounds[1].length + 0.2f);
         SceneManager.LoadScene(0);
     }
 
     IEnumerator ReallySophisticatedAndComplicatedAlghorytyhmForDelayingAsMuchTimeAsPossible()
     {
-        int rand=Random.Range(0,ChangeSceneSounds.Count);
-        CSSource.clip= ChangeSceneSounds[rand];
+        int rand = Random.Range(0, ChangeSceneSounds.Count);
+        CSSource.clip = ChangeSceneSounds[rand];
         CSSource.Play();
-        yield return new WaitForSeconds(ChangeSceneSounds[rand].length+0.2f);
+        yield return new WaitForSeconds(ChangeSceneSounds[rand].length + 0.2f);
         SceneManager.LoadScene(1);
     }
 
@@ -94,11 +102,8 @@ public class ButtonsScript : MonoBehaviour
         int rand = Random.Range(0, LeaveGameSounds.Count);
         QASource.clip = LeaveGameSounds[rand];
         QASource.Play();
-        yield return new WaitForSeconds(LeaveGameSounds[rand].length+0.2f);
+        yield return new WaitForSeconds(LeaveGameSounds[rand].length + 0.2f);
         Application.Quit();
         Debug.Log("NAURA");
     }
-
-    
-
 }

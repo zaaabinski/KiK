@@ -2,18 +2,18 @@ using UnityEngine;
 
 public class Bard : Participant
 {
-   internal Bard(ParticipantScriptable pS):base(pS)
-   {
+    internal Bard(ParticipantScriptable pS) : base(pS)
+    {
 
-   }
-   internal override int BasicAttack(Participant FigtherReceivingDamage)
-   {
-        dmg = multiplierMainStat * this.charisma + multiplierOtherStat * this.spd + Random.Range(-((int)(this.charisma / 2)), (int)(this.charisma / 2))+ Enemy_is_Rouge_or_Warrior(FigtherReceivingDamage);
+    }
+    internal override int BasicAttack(Participant FigtherReceivingDamage)
+    {
+        dmg = multiplierMainStat * this.charisma + multiplierOtherStat * this.spd + Random.Range(-((int)(this.charisma / 2)), (int)(this.charisma / 2)) + Enemy_is_Rouge_or_Warrior(FigtherReceivingDamage);
         return dmg;
-   }
+    }
     internal override int StrongAttack(Participant FigtherReceivingDamage)
     {
-        dmg = 2 * (multiplierMainStat * this.charisma + multiplierOtherStat * this.spd)+ Random.Range(-((int)(this.charisma / 2)), (int)(this.charisma / 2)) + Enemy_is_Rouge_or_Warrior(FigtherReceivingDamage);
+        dmg = 2 * (multiplierMainStat * this.charisma + multiplierOtherStat * this.spd) + Random.Range(-((int)(this.charisma / 2)), (int)(this.charisma / 2)) + Enemy_is_Rouge_or_Warrior(FigtherReceivingDamage);
         return dmg;
     }
 
@@ -25,7 +25,7 @@ public class Bard : Participant
 
     int Enemy_is_Rouge_or_Warrior(Participant FighterReceivingDmage)
     {
-        if(FighterReceivingDmage is Rouge || FighterReceivingDmage is Warrior)
+        if (FighterReceivingDmage is Rouge || FighterReceivingDmage is Warrior)
         {
             return 5;
         }
