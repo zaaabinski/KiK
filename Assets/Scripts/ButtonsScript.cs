@@ -18,16 +18,22 @@ public class ButtonsScript : MonoBehaviour
     [SerializeField] private AudioSource CSSource;
     [SerializeField] private AudioSource QASource;
 
+    public static string mapName="";
+
+
+
     public void Start()
     {
-        if (SceneManager.GetActiveScene().buildIndex == 2)
+        //check if scene is the map selection
+        if (SceneManager.GetActiveScene().buildIndex == 1)
         {
             CheckIfMapScene();
         }
     }
-
+    
     private void CheckIfMapScene()
     {
+        //set basic values for map chosing
         mapIndex = 0;
         MapImage.sprite = MapList[mapIndex];
         textPlace.text = "\n\n" + MapList[mapIndex].name;
@@ -35,8 +41,14 @@ public class ButtonsScript : MonoBehaviour
 
     public void ChangeScene()
     {
-        StartCoroutine(ReallySophisticatedAndComplicatedAlghorytyhmForDelayingAsMuchTimeAsPossible());
+        StartCoroutine(ReallySophisticatedAndComplicatedAlghorytyhmForDelayingAsMuchTimeAsPossible(1));
     }
+
+    public void StartSim()
+    {
+        StartCoroutine(ReallySophisticatedAndComplicatedAlghorytyhmForDelayingAsMuchTimeAsPossible(2));
+    }
+
 
     public void QuitGame()
     {
@@ -50,6 +62,7 @@ public class ButtonsScript : MonoBehaviour
 
     public void ChangeMapRight()
     {
+        //load next map by index right
         if (mapIndex + 1 >= MapList.Count)
         {
             mapIndex = 0;
@@ -66,6 +79,7 @@ public class ButtonsScript : MonoBehaviour
 
     public void ChangeMapLeft()
     {
+        //load next map by index left
         if (mapIndex - 1 < 0)
         {
             mapIndex = MapList.Count - 1;
@@ -82,23 +96,28 @@ public class ButtonsScript : MonoBehaviour
 
     IEnumerator Teleporting()
     {
+        //loads scene with index 0 after playing sound
         QASource.clip = LeaveGameSounds[1];
         QASource.Play();
         yield return new WaitForSeconds(LeaveGameSounds[1].length + 0.2f);
         SceneManager.LoadScene(0);
     }
 
-    IEnumerator ReallySophisticatedAndComplicatedAlghorytyhmForDelayingAsMuchTimeAsPossible()
+    IEnumerator ReallySophisticatedAndComplicatedAlghorytyhmForDelayingAsMuchTimeAsPossible(int i)
     {
+        //loads tournament scene
         int rand = Random.Range(0, ChangeSceneSounds.Count);
+        mapName = MapImage.sprite.name;
+        Debug.Log(mapName);
         CSSource.clip = ChangeSceneSounds[rand];
         CSSource.Play();
-        yield return new WaitForSeconds(ChangeSceneSounds[rand].length + 0.2f);
-        SceneManager.LoadScene(1);
+        yield return new WaitForSeconds(ChangeSceneSounds[rand].length + 0.15f);
+        SceneManager.LoadScene(i);
     }
 
     IEnumerator MomentBeforeYouRunAwayToYourMother()
     {
+        //waits till sound is over then quit application
         int rand = Random.Range(0, LeaveGameSounds.Count);
         QASource.clip = LeaveGameSounds[rand];
         QASource.Play();

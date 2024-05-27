@@ -13,4 +13,7 @@ public class ParticipantScriptable : ScriptableObject
     public int pWisdom;
     public int pCharisma;
     public int pCritChance;
+    public int receivedDamage;
+    public int dealtDamage;
+    public string favouriteMap;
 }

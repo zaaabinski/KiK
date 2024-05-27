@@ -22,3 +22,6 @@ MonoBehaviour:
   pWisdom: 9
   pCharisma: 20
   pCritChance: 15
+  receivedDamage: 0
+  dealtDamage: 0
+  favouriteMap: Scena
