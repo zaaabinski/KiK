@@ -20,6 +20,8 @@ public class ButtonsScript : MonoBehaviour
 
     public static string mapName="";
 
+    [SerializeField] TMP_InputField simNumber;
+
 
 
     public void Start()
@@ -108,7 +110,8 @@ public class ButtonsScript : MonoBehaviour
         //loads tournament scene
         int rand = Random.Range(0, ChangeSceneSounds.Count);
         mapName = MapImage.sprite.name;
-        Debug.Log(mapName);
+        RepeatSimulation.howManyLoops = int.Parse(simNumber.text);
+        Debug.Log(RepeatSimulation.howManyLoops);
         CSSource.clip = ChangeSceneSounds[rand];
         CSSource.Play();
         yield return new WaitForSeconds(ChangeSceneSounds[rand].length + 0.15f);
