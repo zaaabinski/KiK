@@ -16,7 +16,7 @@ public class RepeatSimulation : MonoBehaviour
         DontDestroyOnLoad(this.gameObject);
     }
 
-    private void Start()
+/*    private void Start()
     {
         if (SceneManager.GetActiveScene().buildIndex == 2)
         {
@@ -32,5 +32,5 @@ public class RepeatSimulation : MonoBehaviour
         loopCounter++;
         yield return new WaitForSeconds(1.5f);
         SceneManager.LoadScene(2);
-    }
+    }*/
 }

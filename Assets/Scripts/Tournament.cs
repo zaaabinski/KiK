@@ -3,17 +3,18 @@ using UnityEngine;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
 using System.IO;
+using System.Collections;
+using UnityEngine.SceneManagement;
+using TMPro;
 
 public class Tournament : MonoBehaviour
 {
     private Duel duelScript;
-    private ButtonsScript buttonsScript;
 
     [SerializeField] private Image winnerImage;
     [SerializeField] private GameObject[] currentRound;
     [SerializeField] private Image[] imageRoundList;
     private int round = 0;
-
     
     [SerializeField] private List<ParticipantScriptable> warriorScricptable = new List<ParticipantScriptable>();
     [SerializeField] private List<ParticipantScriptable> mageScriptable = new List<ParticipantScriptable>();
@@ -29,25 +30,34 @@ public class Tournament : MonoBehaviour
     [SerializeField] private List<Sprite> maklowicz = new List<Sprite>();
     [SerializeField] private Image TamGdzieWspanialyCzlowiekRezyduje;
 
+    [SerializeField] private TextMeshProUGUI progresstext;
+    [SerializeField] private TextMeshProUGUI simcounterText;
 
     private void Awake()
     {
         //get refference to duel script
         duelScript = GetComponent<Duel>();
         Debug.Log(ButtonsScript.mapName);
+        progresstext.text = "\n\nSymulacja trwa";
     }
 
     void Start()
     {
         //set all starting parameters, use all functions
-        Participant.pID = -1;
-        round = 0;
-        tournamentList.Clear();
-        CreateParticpants();
-        MaklowiczMood();
-        RandomizeParticpantsId();
-        GetImages(currentRound[round]);
-        StartRound();
+        //Debug.Log("Sim: " + RepeatSimulation.howManyLoops);
+        if (RepeatSimulation.loopCounter<RepeatSimulation.howManyLoops)
+        {
+            Participant.pID = -1;
+            round = 0;
+            tournamentList.Clear();
+            CreateParticpants();
+            MaklowiczMood();
+            RandomizeParticpantsId();
+            GetImages(currentRound[round]);
+            StartRound();
+            StartCoroutine(WaitOnDemand());
+        }
+        
     }
 
     void SaveWinnerToFile()
@@ -194,7 +204,7 @@ public class Tournament : MonoBehaviour
         //if finale end simulation and show winner
         else if (round == 3)
         {
-            Debug.Log(tournamentList[0].name + " Wins!");
+            //Debug.Log(tournamentList[0].name + " Wins!");
             winnerImage.sprite = tournamentList[0].sprite;
             SaveWinnerToFile();
         }
@@ -274,5 +284,21 @@ public class Tournament : MonoBehaviour
     {
         int rand = Random.Range(0, 6);
         TamGdzieWspanialyCzlowiekRezyduje.sprite = maklowicz[rand];
+    }
+
+    IEnumerator WaitOnDemand()
+    {
+        RepeatSimulation.loopCounter++;
+        if (RepeatSimulation.loopCounter < RepeatSimulation.howManyLoops)
+        {
+            yield return new WaitForSeconds(0);
+            SceneManager.LoadScene(2);
+            simcounterText.text = RepeatSimulation.loopCounter.ToString();
+        }
+        else
+        {
+            simcounterText.text = RepeatSimulation.loopCounter.ToString();
+            progresstext.text = "\n\nKoniec symulacji";
+        }
     }
 }

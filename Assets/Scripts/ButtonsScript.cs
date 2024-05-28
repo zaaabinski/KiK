@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+
 public class ButtonsScript : MonoBehaviour
 {
     [SerializeField] private List<Sprite> MapList = new List<Sprite>();
@@ -20,17 +21,21 @@ public class ButtonsScript : MonoBehaviour
 
     public static string mapName="";
 
+    [SerializeField] private TextMeshProUGUI ReminderText;
+
     [SerializeField] TMP_InputField simNumber;
 
-
+    [SerializeField] internal Button StartSimButton;
 
     public void Start()
     {
+        
         //check if scene is the map selection
         if (SceneManager.GetActiveScene().buildIndex == 1)
         {
             CheckIfMapScene();
         }
+        
     }
     
     private void CheckIfMapScene()
@@ -39,6 +44,7 @@ public class ButtonsScript : MonoBehaviour
         mapIndex = 0;
         MapImage.sprite = MapList[mapIndex];
         textPlace.text = "\n\n" + MapList[mapIndex].name;
+        StartSimButton.interactable = true;
     }
 
     public void ChangeScene()
@@ -48,9 +54,20 @@ public class ButtonsScript : MonoBehaviour
 
     public void StartSim()
     {
-        StartCoroutine(ReallySophisticatedAndComplicatedAlghorytyhmForDelayingAsMuchTimeAsPossible(2));
-    }
 
+        mapName = MapImage.sprite.name;
+        if (simNumber.text.Equals(""))
+        {
+            StartCoroutine(ReminderToWriteNumber());
+        }
+        else
+        {
+            StartSimButton.interactable=false;
+            RepeatSimulation.howManyLoops = int.Parse(simNumber.text);
+            StartCoroutine(ReallySophisticatedAndComplicatedAlghorytyhmForDelayingAsMuchTimeAsPossible(2));
+        }
+         
+    }
 
     public void QuitGame()
     {
@@ -109,9 +126,6 @@ public class ButtonsScript : MonoBehaviour
     {
         //loads tournament scene
         int rand = Random.Range(0, ChangeSceneSounds.Count);
-        mapName = MapImage.sprite.name;
-        RepeatSimulation.howManyLoops = int.Parse(simNumber.text);
-        Debug.Log(RepeatSimulation.howManyLoops);
         CSSource.clip = ChangeSceneSounds[rand];
         CSSource.Play();
         yield return new WaitForSeconds(ChangeSceneSounds[rand].length + 0.15f);
@@ -127,5 +141,13 @@ public class ButtonsScript : MonoBehaviour
         yield return new WaitForSeconds(LeaveGameSounds[rand].length + 0.2f);
         Application.Quit();
         Debug.Log("NAURA");
+    }
+
+
+    IEnumerator ReminderToWriteNumber()
+    {
+        ReminderText.text = "\n\nMusisz wpisac jakas liczbe";
+        yield return new WaitForSeconds(2f);
+        ReminderText.text = "";
     }
 }

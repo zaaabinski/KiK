@@ -1113,6 +1113,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 017cb42d2e4a3bd4785f279f8a6969ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MapList: []
+  MapImage: {fileID: 0}
+  textPlace: {fileID: 0}
   ChangeSceneSounds:
   - {fileID: 8300000, guid: 020bcb8280b7cd1498602448dbcda712, type: 3}
   - {fileID: 8300000, guid: 1636ee46d1e9a314aac71906f04523cd, type: 3}
@@ -1125,6 +1128,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 2fed89f9384d67e4cb401076b80ddb78, type: 3}
   CSSource: {fileID: 286917786}
   QASource: {fileID: 113192237}
+  ReminderText: {fileID: 0}
+  simNumber: {fileID: 0}
 --- !u!1 &510191784
 GameObject:
   m_ObjectHideFlags: 0
@@ -1771,6 +1776,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 789741588}
+        m_TargetAssemblyTypeName: UnityEngine.UI.Selectable, UnityEngine.UI
+        m_MethodName: set_interactable
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &823255348
 GameObject:
   m_ObjectHideFlags: 0
@@ -2062,6 +2079,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
         m_MethodName: Play
         m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1058616104}
+        m_TargetAssemblyTypeName: UnityEngine.UI.Selectable, UnityEngine.UI
+        m_MethodName: set_interactable
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2391,6 +2420,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
         m_MethodName: Play
         m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1170466597}
+        m_TargetAssemblyTypeName: UnityEngine.UI.Selectable, UnityEngine.UI
+        m_MethodName: set_interactable
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
