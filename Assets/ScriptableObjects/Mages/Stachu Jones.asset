@@ -22,3 +22,6 @@ MonoBehaviour:
   pWisdom: 20
   pCharisma: 8
   pCritChance: 15
+  receivedDamage: 0
+  dealtDamage: 0
+  favouriteMap: Pole

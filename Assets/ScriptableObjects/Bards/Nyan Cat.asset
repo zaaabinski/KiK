@@ -22,3 +22,6 @@ MonoBehaviour:
   pWisdom: 4
   pCharisma: 18
   pCritChance: 15
+  receivedDamage: 0
+  dealtDamage: 0
+  favouriteMap: Kosmos

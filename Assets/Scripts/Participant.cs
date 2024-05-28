@@ -17,7 +17,17 @@ public abstract class Participant
     internal int wisdom;
     internal int charisma;
     internal int critChance;
-    
+
+    internal int receivedDamage;
+    internal int dealtDamage;
+    internal string favouriteMap;
+
+    internal int usedNormalAttacks;
+    internal int usedStrongAttacks;
+    internal int usedScreamAttacks;
+    internal int usedSpecialAttacks;
+    internal int missedAttacks;
+
     internal int multiplierMainStat=2;
     internal int multiplierOtherStat=1;
 
@@ -25,7 +35,7 @@ public abstract class Participant
     {
         Debug.Log("No values in");
     }
-
+    //sets values based on scriptble objects
     internal Participant(ParticipantScriptable obj)
     {
         pID ++;
@@ -41,10 +51,19 @@ public abstract class Participant
         this.spd = obj.pSpeed;
         this.charisma=obj.pCharisma;
         this.critChance=obj.pCritChance;
+        this.receivedDamage = obj.receivedDamage;
+        this.dealtDamage = obj.dealtDamage;
+        this.favouriteMap = obj.favouriteMap;
+        this.usedNormalAttacks = 0;
+        this.usedStrongAttacks = 0; 
+        this.usedScreamAttacks = 0;
+        this.usedSpecialAttacks = 0;
+        this.missedAttacks = 0;
     }
 
     internal void Move(Participant FigtherReceivingDamage)
     {
+        //each move get random values for which abbility to use and if the abbility hits
         int rand=Random.Range(0, 101);
 
         int hitChance = Random.Range(0, 101);
@@ -53,41 +72,62 @@ public abstract class Participant
 
         if (rand>0&&rand <51)
         {
+            //use basic attack
             if (hitChance <= this.agility * 5)
             {
                 dealtDamage = BasicAttack(FigtherReceivingDamage);
-                Debug.Log("Basic "+this.name + " HP: " + this.hp + " Damage " + dealtDamage);
-                FigtherReceivingDamage.hp= dealtDamage;
+                Debug.Log("Basic " + this.name + " HP: " + this.hp + " Damage " + dealtDamage);
+                this.usedNormalAttacks++;
+                FigtherReceivingDamage.hp -= dealtDamage;
             }
-            Debug.Log("Miss! " + this.name);
+            else
+            {
+                Debug.Log("Miss! " + this.name + " HP: " + this.hp);
+                this.missedAttacks++;
+            }
         }
         else if (rand<75)
         {
+            //use strong attack
             if (hitChance <= this.agility * 4)
             {
                 dealtDamage= StrongAttack(FigtherReceivingDamage);
                 Debug.Log("Strong "+ this.name + " HP: " + this.hp + " Damage " + dealtDamage);
-                FigtherReceivingDamage.hp = dealtDamage;
+                this.usedStrongAttacks++;
+                FigtherReceivingDamage.hp -= dealtDamage;
             }
-            Debug.Log("Miss! " + this.name);
+            else
+            {
+                Debug.Log("Miss! " + this.name + " HP: " + this.hp);
+                this.missedAttacks++;
+            }
         }
         else if(rand<85)
         {
+            //use scream attack
             if (hitChance <= this.agility * 5)
             {
                 dealtDamage= ScreamAttack(FigtherReceivingDamage);
                 Debug.Log("Scream "+ this.name + " HP: "+this.hp+ " Damage " + dealtDamage);
-                FigtherReceivingDamage.hp = dealtDamage;
+                this.usedScreamAttacks++;
+                FigtherReceivingDamage.hp -= dealtDamage;
             }
-            Debug.Log("Miss! " + this.name);
+            else
+            {
+                Debug.Log("Miss! " + this.name + " HP: " + this.hp);
+                this.missedAttacks++;
+            }
         }
         else
         {
+            //this section will be done later XD
             Debug.Log("Special "+ this.name + " HP: " + this.hp);
-            FigtherReceivingDamage.hp = SpecialAbility();
+            this.usedSpecialAttacks++;
+            FigtherReceivingDamage.hp -= SpecialAbility();
         }
     }
 
+    //functions that are used by fighters
     internal abstract int BasicAttack(Participant FighterReceivingDamage);
     internal abstract int StrongAttack(Participant FighterReceivingDamage);
 
@@ -97,4 +137,17 @@ public abstract class Participant
     {
         return 0;
     }
+
+    public int Is_Favourite_Map()
+    {
+        if (this.favouriteMap==ButtonsScript.mapName)
+        {
+            return 2;
+        }
+        else
+        {
+            return 0;
+        }
+    }
+
 }
