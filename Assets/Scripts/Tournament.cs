@@ -39,6 +39,7 @@ public class Tournament : MonoBehaviour
         duelScript = GetComponent<Duel>();
         Debug.Log(ButtonsScript.mapName);
         progresstext.text = "\n\nSymulacja trwa";
+
     }
 
     void Start()

@@ -65,6 +65,7 @@ public class ButtonsScript : MonoBehaviour
             StartSimButton.interactable=false;
             RepeatSimulation.howManyLoops = int.Parse(simNumber.text);
             StartCoroutine(ReallySophisticatedAndComplicatedAlghorytyhmForDelayingAsMuchTimeAsPossible(2));
+            
         }
          
     }
