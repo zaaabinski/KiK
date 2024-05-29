@@ -76,13 +76,13 @@ public abstract class Participant
             if (hitChance <= this.agility * 5)
             {
                 dealtDamage = BasicAttack(FigtherReceivingDamage);
-                Debug.Log("Basic " + this.name + " HP: " + this.hp + " Damage " + dealtDamage);
+                //Debug.Log("Basic " + this.name + " HP: " + this.hp + " Damage " + dealtDamage);
                 this.usedNormalAttacks++;
                 FigtherReceivingDamage.hp -= dealtDamage;
             }
             else
             {
-                Debug.Log("Miss! " + this.name + " HP: " + this.hp);
+                //Debug.Log("Miss! " + this.name + " HP: " + this.hp);
                 this.missedAttacks++;
             }
         }
@@ -92,13 +92,13 @@ public abstract class Participant
             if (hitChance <= this.agility * 4)
             {
                 dealtDamage= StrongAttack(FigtherReceivingDamage);
-                Debug.Log("Strong "+ this.name + " HP: " + this.hp + " Damage " + dealtDamage);
+                //Debug.Log("Strong "+ this.name + " HP: " + this.hp + " Damage " + dealtDamage);
                 this.usedStrongAttacks++;
                 FigtherReceivingDamage.hp -= dealtDamage;
             }
             else
             {
-                Debug.Log("Miss! " + this.name + " HP: " + this.hp);
+                //Debug.Log("Miss! " + this.name + " HP: " + this.hp);
                 this.missedAttacks++;
             }
         }
@@ -108,20 +108,20 @@ public abstract class Participant
             if (hitChance <= this.agility * 5)
             {
                 dealtDamage= ScreamAttack(FigtherReceivingDamage);
-                Debug.Log("Scream "+ this.name + " HP: "+this.hp+ " Damage " + dealtDamage);
+                //Debug.Log("Scream "+ this.name + " HP: "+this.hp+ " Damage " + dealtDamage);
                 this.usedScreamAttacks++;
                 FigtherReceivingDamage.hp -= dealtDamage;
             }
             else
             {
-                Debug.Log("Miss! " + this.name + " HP: " + this.hp);
+                //Debug.Log("Miss! " + this.name + " HP: " + this.hp);
                 this.missedAttacks++;
             }
         }
         else
         {
             //this section will be done later XD
-            Debug.Log("Special "+ this.name + " HP: " + this.hp);
+            //Debug.Log("Special "+ this.name + " HP: " + this.hp);
             this.usedSpecialAttacks++;
             FigtherReceivingDamage.hp -= SpecialAbility();
         }
