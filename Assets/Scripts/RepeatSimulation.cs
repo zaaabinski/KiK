@@ -9,14 +9,14 @@ public class RepeatSimulation : MonoBehaviour
 
     internal static int loopCounter=0;
     internal static int howManyLoops=0;
-    private static AudioSource musicSource;
+    internal static AudioSource musicSource;
     //[SerializeField] private AudioClip musicClip;
 
     private void Awake()
     {
-        musicSource=GetComponent<AudioSource>();
+        musicSource = GetComponent<AudioSource>();
         DontDestroyOnLoad(this.gameObject);
-        StartPlayingMusic();
+        StartPlayingMusic();   
     }
 
     public void StartPlayingMusic()

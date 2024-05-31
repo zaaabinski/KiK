@@ -78,6 +78,7 @@ public class ButtonsScript : MonoBehaviour
     public void BackToMenu()
     {
         StartCoroutine(Teleporting());
+        
     }
 
     public void ChangeMapRight()
@@ -121,6 +122,7 @@ public class ButtonsScript : MonoBehaviour
         QASource.Play();
         yield return new WaitForSeconds(LeaveGameSounds[1].length + 0.2f);
         SceneManager.LoadScene(0);
+        RepeatSimulation.musicSource.Stop();
     }
 
     IEnumerator ReallySophisticatedAndComplicatedAlghorytyhmForDelayingAsMuchTimeAsPossible(int i)
