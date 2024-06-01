@@ -15,8 +15,8 @@ public class Tournament : MonoBehaviour
     [SerializeField] private GameObject[] currentRound;
     [SerializeField] private Image[] imageRoundList;
     private int round = 0;
-    
-    [SerializeField] private List<ParticipantScriptable> warriorScricptable = new List<ParticipantScriptable>();
+
+    [SerializeField] private List<ParticipantScriptable> warriorScriptable = new List<ParticipantScriptable>();
     [SerializeField] private List<ParticipantScriptable> mageScriptable = new List<ParticipantScriptable>();
     [SerializeField] private List<ParticipantScriptable> rougeScriptable = new List<ParticipantScriptable>();
     [SerializeField] private List<ParticipantScriptable> bardScriptable = new List<ParticipantScriptable>();
@@ -28,7 +28,7 @@ public class Tournament : MonoBehaviour
     [SerializeField] private List<int> idToDelte = new List<int>();
 
     [SerializeField] private List<Sprite> maklowicz = new List<Sprite>();
-    [SerializeField] private Image TamGdzieWspanialyCzlowiekRezyduje;
+    [SerializeField] private Image tamGdzieWspanialyCzlowiekRezyduje;
 
     [SerializeField] private TextMeshProUGUI progresstext;
     [SerializeField] private TextMeshProUGUI simcounterText;
@@ -39,14 +39,13 @@ public class Tournament : MonoBehaviour
         duelScript = GetComponent<Duel>();
         Debug.Log(ButtonsScript.mapName);
         progresstext.text = "\n\nSymulacja trwa";
-
     }
 
     void Start()
     {
         //set all starting parameters, use all functions
         //Debug.Log("Sim: " + RepeatSimulation.howManyLoops);
-        if (RepeatSimulation.loopCounter<RepeatSimulation.howManyLoops)
+        if (RepeatSimulation.loopCounter < RepeatSimulation.howManyLoops)
         {
             Participant.pID = -1;
             round = 0;
@@ -58,7 +57,6 @@ public class Tournament : MonoBehaviour
             StartRound();
             StartCoroutine(WaitOnDemand());
         }
-        
     }
 
     void SaveWinnerToFile()
@@ -70,11 +68,17 @@ public class Tournament : MonoBehaviour
         {
             if (new FileInfo(fileLocation).Length == 0)
             {
-                writer.WriteLine("Id postaci;Imie postaci;Klasa postaci;Otrzymane obrazenia;Zadane obrazenia;U¿yte ataki podstawowe;U¿yte silne ataki;U¿yte ataki krzykiem;U¿yte ataki specjalne;Ile spud³owano;Mapa");
+                writer.WriteLine(
+                    "Id postaci;Imie postaci;Klasa postaci;Otrzymane obrazenia;Zadane obrazenia;U¿yte ataki podstawowe;U¿yte silne ataki;U¿yte ataki krzykiem;U¿yte ataki specjalne;Ile spud³owano;Mapa");
             }
-            writer.WriteLine(idList[0] + ";" + tournamentList[0].name + ";" + tournamentList[0].GetType() + ";" + tournamentList[0].receivedDamage + ";" + tournamentList[0].dealtDamage + ";" + tournamentList[0].usedNormalAttacks + ";" + tournamentList[0].usedStrongAttacks + ";" + tournamentList[0].usedScreamAttacks + ";" + tournamentList[0].usedSpecialAttacks+";"+tournamentList[0].missedAttacks+";" + ButtonsScript.mapName);
+
+            writer.WriteLine(idList[0] + ";" + tournamentList[0].name + ";" + tournamentList[0].GetType() + ";" +
+                             tournamentList[0].receivedDamage + ";" + tournamentList[0].dealtDamage + ";" +
+                             tournamentList[0].usedNormalAttacks + ";" + tournamentList[0].usedStrongAttacks + ";" +
+                             tournamentList[0].usedScreamAttacks + ";" + tournamentList[0].usedSpecialAttacks + ";" +
+                             tournamentList[0].missedAttacks + ";" + ButtonsScript.mapName);
         }
-        
+
         SaveToFile(0);
     }
 
@@ -87,11 +91,18 @@ public class Tournament : MonoBehaviour
         {
             if (new FileInfo(fileLocation).Length == 0)
             {
-                writer.WriteLine("Id postaci;Imie postaci;Otrzymane obrazenia;Zadane obrazenia;U¿yte ataki podstawowe;U¿yte silne ataki;U¿yte ataki krzykiem;U¿yte ataki specjalne;Ile spud³owano;Mapa;Runda");
+                writer.WriteLine(
+                    "Id postaci;Imie postaci;Otrzymane obrazenia;Zadane obrazenia;U¿yte ataki podstawowe;U¿yte silne ataki;U¿yte ataki krzykiem;U¿yte ataki specjalne;Ile spud³owano;Mapa;Runda");
             }
-            writer.WriteLine(idList[i] + ";" + tournamentList[i].name + ";" + tournamentList[i].receivedDamage + ";" + tournamentList[i].dealtDamage + ";" + tournamentList[0].usedNormalAttacks + ";" + tournamentList[0].usedStrongAttacks + ";" + tournamentList[0].usedScreamAttacks + ";" + tournamentList[0].usedSpecialAttacks + ";" + tournamentList[0].missedAttacks + ";" + ButtonsScript.mapName + ";" + (round + 1));
+
+            writer.WriteLine(idList[i] + ";" + tournamentList[i].name + ";" + tournamentList[i].receivedDamage + ";" +
+                             tournamentList[i].dealtDamage + ";" + tournamentList[0].usedNormalAttacks + ";" +
+                             tournamentList[0].usedStrongAttacks + ";" + tournamentList[0].usedScreamAttacks + ";" +
+                             tournamentList[0].usedSpecialAttacks + ";" + tournamentList[0].missedAttacks + ";" +
+                             ButtonsScript.mapName + ";" + (round + 1));
         }
     }
+
     void SaveMagesToFile(int i)
     {
         //save mages to .txt file
@@ -101,12 +112,18 @@ public class Tournament : MonoBehaviour
         {
             if (new FileInfo(fileLocation).Length == 0)
             {
-                writer.WriteLine("Id postaci;Imie postaci;Otrzymane obrazenia;Zadane obrazenia;U¿yte ataki podstawowe;U¿yte silne ataki;U¿yte ataki krzykiem;U¿yte ataki specjalne;Ile spud³owano;Mapa;Runda");
+                writer.WriteLine(
+                    "Id postaci;Imie postaci;Otrzymane obrazenia;Zadane obrazenia;U¿yte ataki podstawowe;U¿yte silne ataki;U¿yte ataki krzykiem;U¿yte ataki specjalne;Ile spud³owano;Mapa;Runda");
             }
-            writer.WriteLine(idList[i] + ";" + tournamentList[i].name + ";" + tournamentList[i].receivedDamage + ";" + tournamentList[i].dealtDamage + ";" + tournamentList[0].usedNormalAttacks + ";" + tournamentList[0].usedStrongAttacks + ";" + tournamentList[0].usedScreamAttacks + ";" + tournamentList[0].usedSpecialAttacks + ";" + tournamentList[0].missedAttacks + ";" + ButtonsScript.mapName + ";" + (round + 1));
 
+            writer.WriteLine(idList[i] + ";" + tournamentList[i].name + ";" + tournamentList[i].receivedDamage + ";" +
+                             tournamentList[i].dealtDamage + ";" + tournamentList[0].usedNormalAttacks + ";" +
+                             tournamentList[0].usedStrongAttacks + ";" + tournamentList[0].usedScreamAttacks + ";" +
+                             tournamentList[0].usedSpecialAttacks + ";" + tournamentList[0].missedAttacks + ";" +
+                             ButtonsScript.mapName + ";" + (round + 1));
         }
     }
+
     void SaveRoguesToFile(int i)
     {
         //save rouges to .txt file
@@ -116,27 +133,38 @@ public class Tournament : MonoBehaviour
         {
             if (new FileInfo(fileLocation).Length == 0)
             {
-                writer.WriteLine("Id postaci;Imie postaci;Otrzymane obrazenia;Zadane obrazenia;U¿yte ataki podstawowe;U¿yte silne ataki;U¿yte ataki krzykiem;U¿yte ataki specjalne;Ile spud³owano;Mapa;Runda");
+                writer.WriteLine(
+                    "Id postaci;Imie postaci;Otrzymane obrazenia;Zadane obrazenia;U¿yte ataki podstawowe;U¿yte silne ataki;U¿yte ataki krzykiem;U¿yte ataki specjalne;Ile spud³owano;Mapa;Runda");
             }
-            writer.WriteLine(idList[i] + ";" + tournamentList[i].name + ";" + tournamentList[i].receivedDamage + ";" + tournamentList[i].dealtDamage + ";" + tournamentList[0].usedNormalAttacks + ";" + tournamentList[0].usedStrongAttacks + ";" + tournamentList[0].usedScreamAttacks + ";" + tournamentList[0].usedSpecialAttacks + ";" + tournamentList[0].missedAttacks + ";" + ButtonsScript.mapName + ";" + (round + 1));
-        }
 
+            writer.WriteLine(idList[i] + ";" + tournamentList[i].name + ";" + tournamentList[i].receivedDamage + ";" +
+                             tournamentList[i].dealtDamage + ";" + tournamentList[0].usedNormalAttacks + ";" +
+                             tournamentList[0].usedStrongAttacks + ";" + tournamentList[0].usedScreamAttacks + ";" +
+                             tournamentList[0].usedSpecialAttacks + ";" + tournamentList[0].missedAttacks + ";" +
+                             ButtonsScript.mapName + ";" + (round + 1));
+        }
     }
+
     void SaveBardToFile(int i)
     {
         //save bard to .txt file
         var fileLocation = "BardsFile.txt";
-        
+
         using StreamWriter writer = new(fileLocation, append: true);
         if (File.Exists(fileLocation))
         {
             if (new FileInfo(fileLocation).Length == 0)
             {
-                writer.WriteLine("Id postaci;Imie postaci;Otrzymane obrazenia;Zadane obrazenia;U¿yte ataki podstawowe;U¿yte silne ataki;U¿yte ataki krzykiem;U¿yte ataki specjalne;Ile spud³owano;Mapa;Runda");
+                writer.WriteLine(
+                    "Id postaci;Imie postaci;Otrzymane obrazenia;Zadane obrazenia;U¿yte ataki podstawowe;U¿yte silne ataki;U¿yte ataki krzykiem;U¿yte ataki specjalne;Ile spud³owano;Mapa;Runda");
             }
-            writer.WriteLine(idList[i] + ";" + tournamentList[i].name + ";" + tournamentList[i].receivedDamage + ";" + tournamentList[i].dealtDamage + ";" + tournamentList[0].usedNormalAttacks + ";" + tournamentList[0].usedStrongAttacks + ";" + tournamentList[0].usedScreamAttacks + ";" + tournamentList[0].usedSpecialAttacks + ";" + tournamentList[0].missedAttacks + ButtonsScript.mapName+";"+(round + 1));
-        }
 
+            writer.WriteLine(idList[i] + ";" + tournamentList[i].name + ";" + tournamentList[i].receivedDamage + ";" +
+                             tournamentList[i].dealtDamage + ";" + tournamentList[0].usedNormalAttacks + ";" +
+                             tournamentList[0].usedStrongAttacks + ";" + tournamentList[0].usedScreamAttacks + ";" +
+                             tournamentList[0].usedSpecialAttacks + ";" + tournamentList[0].missedAttacks +
+                             ButtonsScript.mapName + ";" + (round + 1));
+        }
     }
 
     void SaveToFile(int i)
@@ -160,7 +188,6 @@ public class Tournament : MonoBehaviour
     }
 
 
-
     void StartRound()
     {
         // clear idToDelete table each round to make sure the ids dont overlap
@@ -180,8 +207,10 @@ public class Tournament : MonoBehaviour
                 ColdBeerToRefillYourWillToFight(tournamentList[i + 1]);
                 SaveToFile(i);
             }
+
             idToDelte.Add(deletedID);
         }
+
         // go through whole list of idtodelete and delete particpants whose id match
         for (int j = 0; j < idToDelte.Count; j++)
         {
@@ -195,6 +224,7 @@ public class Tournament : MonoBehaviour
                 }
             }
         }
+
         //if not finale start another round
         if (round < 3)
         {
@@ -210,6 +240,7 @@ public class Tournament : MonoBehaviour
             SaveWinnerToFile();
         }
     }
+
     //refill fighters hp after the round is complete
     void ColdBeerToRefillYourWillToFight(Participant BraveGladiator)
     {
@@ -238,6 +269,7 @@ public class Tournament : MonoBehaviour
                 idList.Add(rand);
             }
         }
+
         //add object that has id corresponding to id list
         for (int i = 0; i < idList.Count; i++)
         {
@@ -269,22 +301,24 @@ public class Tournament : MonoBehaviour
             }
         }
     }
+
     //creates all objects
     void CreateParticpants()
     {
         for (int i = 0; i < 4; i++)
         {
-            particpantList.Add(new Warrior(warriorScricptable[i]));
+            particpantList.Add(new Warrior(warriorScriptable[i]));
             particpantList.Add(new Mage(mageScriptable[i]));
             particpantList.Add(new Rouge(rougeScriptable[i]));
             particpantList.Add(new Bard(bardScriptable[i]));
         }
     }
+
     //this functions is very complicated as it picks the best photo of the most perfect human beeing to oversee the whole tournament
     void MaklowiczMood()
     {
         int rand = Random.Range(0, 6);
-        TamGdzieWspanialyCzlowiekRezyduje.sprite = maklowicz[rand];
+        tamGdzieWspanialyCzlowiekRezyduje.sprite = maklowicz[rand];
     }
 
     IEnumerator WaitOnDemand()

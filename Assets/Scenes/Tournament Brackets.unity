@@ -6618,11 +6618,11 @@ MonoBehaviour:
   - {fileID: 1589354196}
   - {fileID: 2060232933}
   imageRoundList: []
-  warriorScricptable:
-  - {fileID: 11400000, guid: 56686b5a6ae04294c9f1fe5b54e25d52, type: 2}
+  warriorScriptable:
+  - {fileID: 11400000, guid: 163291aa3b4e10647b7b23aac19ece48, type: 2}
   - {fileID: 11400000, guid: ccfc3fd5f6fced54aa72d9a4b978a63f, type: 2}
   - {fileID: 11400000, guid: fbf2cafe872f4ec44831a66738e514e6, type: 2}
-  - {fileID: 11400000, guid: 163291aa3b4e10647b7b23aac19ece48, type: 2}
+  - {fileID: 11400000, guid: 56686b5a6ae04294c9f1fe5b54e25d52, type: 2}
   mageScriptable:
   - {fileID: 11400000, guid: 4503689182755044bad44c28a0486e65, type: 2}
   - {fileID: 11400000, guid: bf1df5b605281db459dfe575f2855be2, type: 2}
@@ -6647,7 +6647,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 1ace5e3b311a7a140bc0ce49048e76b4, type: 3}
   - {fileID: 21300000, guid: 0f20d2c0bd7540641849752e5efec773, type: 3}
   - {fileID: 21300000, guid: 5cbeb30180c85f64494f7b7c5363dde2, type: 3}
-  TamGdzieWspanialyCzlowiekRezyduje: {fileID: 448664538}
+  tamGdzieWspanialyCzlowiekRezyduje: {fileID: 448664538}
   progresstext: {fileID: 1915276258}
   simcounterText: {fileID: 312420576}
 --- !u!4 &1354919528
@@ -6689,16 +6689,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 017cb42d2e4a3bd4785f279f8a6969ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MapList: []
-  MapImage: {fileID: 0}
+  mapList: []
+  mapImage: {fileID: 0}
   textPlace: {fileID: 0}
-  ChangeSceneSounds: []
-  LeaveGameSounds: []
-  CSSource: {fileID: 0}
-  QASource: {fileID: 0}
-  ReminderText: {fileID: 0}
+  changeSceneSounds: []
+  leaveGameSounds: []
+  csSource: {fileID: 0}
+  qsSource: {fileID: 0}
+  reminderText: {fileID: 0}
   simNumber: {fileID: 0}
-  StartSimButton: {fileID: 0}
+  startSimButton: {fileID: 0}
 --- !u!1 &1375119369
 GameObject:
   m_ObjectHideFlags: 0
@@ -7312,24 +7312,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 017cb42d2e4a3bd4785f279f8a6969ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MapList: []
-  MapImage: {fileID: 0}
+  mapList: []
+  mapImage: {fileID: 0}
   textPlace: {fileID: 0}
-  ChangeSceneSounds:
-  - {fileID: 8300000, guid: 020bcb8280b7cd1498602448dbcda712, type: 3}
-  - {fileID: 8300000, guid: 1636ee46d1e9a314aac71906f04523cd, type: 3}
-  - {fileID: 8300000, guid: c7858db1408f2d94c9b45775d73ce790, type: 3}
-  - {fileID: 8300000, guid: cfc28ef44bbf9c14a90df76f054f4236, type: 3}
-  LeaveGameSounds:
-  - {fileID: 8300000, guid: 98787b679176aaf4b9308ff1234792bc, type: 3}
-  - {fileID: 8300000, guid: 43136f10dc4fd0844b8f079b76396d23, type: 3}
-  - {fileID: 8300000, guid: 2b4621f5a56e63847b4db50f596e253c, type: 3}
-  - {fileID: 8300000, guid: 2fed89f9384d67e4cb401076b80ddb78, type: 3}
-  CSSource: {fileID: 855138904}
-  QASource: {fileID: 828110111}
-  ReminderText: {fileID: 0}
+  changeSceneSounds: []
+  leaveGameSounds: []
+  csSource: {fileID: 0}
+  qsSource: {fileID: 0}
+  reminderText: {fileID: 0}
   simNumber: {fileID: 0}
-  StartSimButton: {fileID: 0}
+  startSimButton: {fileID: 0}
 --- !u!1 &1515483121
 GameObject:
   m_ObjectHideFlags: 0

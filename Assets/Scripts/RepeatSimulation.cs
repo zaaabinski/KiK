@@ -6,9 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class RepeatSimulation : MonoBehaviour
 {
-
-    internal static int loopCounter=0;
-    internal static int howManyLoops=0;
+    internal static int loopCounter = 0;
+    internal static int howManyLoops = 0;
     internal static AudioSource musicSource;
     //[SerializeField] private AudioClip musicClip;
 
@@ -18,6 +17,10 @@ public class RepeatSimulation : MonoBehaviour
         DontDestroyOnLoad(this.gameObject);
         StartPlayingMusic();
         musicSource.volume = 1;
+        if (SceneManager.GetActiveScene().buildIndex == 0)
+        {
+            loopCounter = 0;
+        }
     }
 
     public void StartPlayingMusic()
@@ -30,20 +33,3 @@ public class RepeatSimulation : MonoBehaviour
         musicSource.Stop();
     }
 }
-/*    private void Start()
-    {
-        if (SceneManager.GetActiveScene().buildIndex == 2)
-        {
-            if (loopCounter<howManyLoops)
-            {
-                WaitOnDemand();
-            }
-        }
-    }
-
-    IEnumerator WaitOnDemand()
-    {
-        loopCounter++;
-        yield return new WaitForSeconds(1.5f);
-        SceneManager.LoadScene(2);
-    }*/

@@ -15,12 +15,12 @@ MonoBehaviour:
   pName: Palpatine
   pAbilityName: UNLIMITED POWER
   pSprite: {fileID: 21300000, guid: aaad567c6c3acda49b04657fc691172a, type: 3}
-  pMaxHP: 300
-  pStrength: 1
+  pMaxHP: 275
+  pStrength: 4
   pAgility: 16
-  pSpeed: 20
+  pSpeed: 15
   pWisdom: 17
-  pCharisma: 1
+  pCharisma: 3
   pCritChance: 15
   receivedDamage: 0
   dealtDamage: 0

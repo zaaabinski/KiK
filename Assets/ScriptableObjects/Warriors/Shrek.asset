@@ -15,7 +15,7 @@ MonoBehaviour:
   pName: Shrek
   pAbilityName: Wynocha z mojego Bagna!
   pSprite: {fileID: 21300000, guid: e64c33fc07855b542af69e93e45e7c4d, type: 3}
-  pMaxHP: 500
+  pMaxHP: 300
   pStrength: 17
   pAgility: 10
   pSpeed: 10

@@ -15,10 +15,10 @@ MonoBehaviour:
   pName: Stachu Jones
   pAbilityName: Wywalaj z mojej ziemii
   pSprite: {fileID: 21300000, guid: 667f95413d34f4e429af5adeb22256b9, type: 3}
-  pMaxHP: 300
+  pMaxHP: 275
   pStrength: 2
-  pAgility: 12
-  pSpeed: 13
+  pAgility: 10
+  pSpeed: 15
   pWisdom: 20
   pCharisma: 8
   pCritChance: 15
