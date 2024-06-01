@@ -124,9 +124,9 @@ public class ButtonsScript : MonoBehaviour
     IEnumerator Teleporting()
     {
         //loads scene with index 0 after playing sound
-        qsSource.clip = leaveGameSounds[1];
+        qsSource.clip = leaveGameSounds[0];
         qsSource.Play();
-        yield return new WaitForSeconds(leaveGameSounds[1].length + 0.2f);
+        yield return new WaitForSeconds(leaveGameSounds[0].length + 0.2f);
         SceneManager.LoadScene(0);
         RepeatSimulation.musicSource.Stop();
     }

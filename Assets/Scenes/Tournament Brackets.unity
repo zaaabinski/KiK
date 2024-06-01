@@ -3683,7 +3683,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!82 &855138904
 AudioSource:
   m_ObjectHideFlags: 0
@@ -6693,9 +6693,10 @@ MonoBehaviour:
   mapImage: {fileID: 0}
   textPlace: {fileID: 0}
   changeSceneSounds: []
-  leaveGameSounds: []
+  leaveGameSounds:
+  - {fileID: 8300000, guid: 43136f10dc4fd0844b8f079b76396d23, type: 3}
   csSource: {fileID: 0}
-  qsSource: {fileID: 0}
+  qsSource: {fileID: 828110111}
   reminderText: {fileID: 0}
   simNumber: {fileID: 0}
   startSimButton: {fileID: 0}
@@ -7316,9 +7317,10 @@ MonoBehaviour:
   mapImage: {fileID: 0}
   textPlace: {fileID: 0}
   changeSceneSounds: []
-  leaveGameSounds: []
+  leaveGameSounds:
+  - {fileID: 8300000, guid: 43136f10dc4fd0844b8f079b76396d23, type: 3}
   csSource: {fileID: 0}
-  qsSource: {fileID: 0}
+  qsSource: {fileID: 828110111}
   reminderText: {fileID: 0}
   simNumber: {fileID: 0}
   startSimButton: {fileID: 0}
