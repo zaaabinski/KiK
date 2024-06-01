@@ -16,7 +16,8 @@ public class RepeatSimulation : MonoBehaviour
     {
         musicSource = GetComponent<AudioSource>();
         DontDestroyOnLoad(this.gameObject);
-        StartPlayingMusic();   
+        StartPlayingMusic();
+        musicSource.volume = 1;
     }
 
     public void StartPlayingMusic()
