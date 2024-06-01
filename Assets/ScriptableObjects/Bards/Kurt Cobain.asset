@@ -15,7 +15,7 @@ MonoBehaviour:
   pName: Kurt Cobain
   pAbilityName: I swear I dont have a gun
   pSprite: {fileID: 21300000, guid: 3de5fa68e5c6ede49917c700cf7668e0, type: 3}
-  pMaxHP: 400
+  pMaxHP: 250
   pStrength: 4
   pAgility: 15
   pSpeed: 15

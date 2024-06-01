@@ -18,9 +18,9 @@ MonoBehaviour:
   pMaxHP: 200
   pStrength: 3
   pAgility: 17
-  pSpeed: 14
+  pSpeed: 19
   pWisdom: 11
-  pCharisma: 10
+  pCharisma: 5
   pCritChance: 30
   receivedDamage: 0
   dealtDamage: 0

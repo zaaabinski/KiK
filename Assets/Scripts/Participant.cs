@@ -2,8 +2,7 @@ using UnityEngine;
 
 public abstract class Participant
 {
-
-    internal static int pID=-1;
+    internal static int pID = -1;
     internal int id;
     internal string name;
     internal string abilityName;
@@ -28,57 +27,58 @@ public abstract class Participant
     internal int usedSpecialAttacks;
     internal int missedAttacks;
 
-    internal int multiplierMainStat=2;
-    internal int multiplierOtherStat=1;
+    internal int multiplierMainStat = 2;
+    internal int multiplierOtherStat = 1;
 
     internal Participant()
     {
         Debug.Log("No values in");
     }
-    //sets values based on scriptble objects
+
+    //sets values based on scriptable objects
     internal Participant(ParticipantScriptable obj)
     {
-        pID ++;
+        pID++;
         this.id = pID;
         this.name = obj.name;
         this.sprite = obj.pSprite;
         this.abilityName = obj.pAbilityName;
-        this.hp=obj.pMaxHP;
+        this.hp = obj.pMaxHP;
         this.maxHP = obj.pMaxHP;
         this.strength = obj.pStrength;
         this.agility = obj.pAgility;
         this.wisdom = obj.pWisdom;
         this.spd = obj.pSpeed;
-        this.charisma=obj.pCharisma;
-        this.critChance=obj.pCritChance;
+        this.charisma = obj.pCharisma;
+        this.critChance = obj.pCritChance;
         this.receivedDamage = obj.receivedDamage;
         this.dealtDamage = obj.dealtDamage;
         this.favouriteMap = obj.favouriteMap;
         this.usedNormalAttacks = 0;
-        this.usedStrongAttacks = 0; 
+        this.usedStrongAttacks = 0;
         this.usedScreamAttacks = 0;
         this.usedSpecialAttacks = 0;
         this.missedAttacks = 0;
     }
 
-    internal void Move(Participant FigtherReceivingDamage)
+    internal void Move(Participant fighterReceivingDamage)
     {
-        //each move get random values for which abbility to use and if the abbility hits
-        int rand=Random.Range(0, 101);
+        //each move get random values for which ability to use and if the ability hits
+        int rand = Random.Range(0, 101);
 
         int hitChance = Random.Range(0, 101);
 
         int dealtDamage;
 
-        if (rand>0&&rand <51)
+        if (rand > 0 && rand < 51)
         {
             //use basic attack
             if (hitChance <= this.agility * 5)
             {
-                dealtDamage = BasicAttack(FigtherReceivingDamage);
+                dealtDamage = BasicAttack(fighterReceivingDamage);
                 //Debug.Log("Basic " + this.name + " HP: " + this.hp + " Damage " + dealtDamage);
                 this.usedNormalAttacks++;
-                FigtherReceivingDamage.hp -= dealtDamage;
+                fighterReceivingDamage.hp -= dealtDamage;
             }
             else
             {
@@ -86,15 +86,15 @@ public abstract class Participant
                 this.missedAttacks++;
             }
         }
-        else if (rand<75)
+        else if (rand < 75)
         {
             //use strong attack
             if (hitChance <= this.agility * 4)
             {
-                dealtDamage= StrongAttack(FigtherReceivingDamage);
+                dealtDamage = StrongAttack(fighterReceivingDamage);
                 //Debug.Log("Strong "+ this.name + " HP: " + this.hp + " Damage " + dealtDamage);
                 this.usedStrongAttacks++;
-                FigtherReceivingDamage.hp -= dealtDamage;
+                fighterReceivingDamage.hp -= dealtDamage;
             }
             else
             {
@@ -102,15 +102,15 @@ public abstract class Participant
                 this.missedAttacks++;
             }
         }
-        else if(rand<85)
+        else if (rand < 85)
         {
             //use scream attack
             if (hitChance <= this.agility * 5)
             {
-                dealtDamage= ScreamAttack(FigtherReceivingDamage);
+                dealtDamage = ScreamAttack(fighterReceivingDamage);
                 //Debug.Log("Scream "+ this.name + " HP: "+this.hp+ " Damage " + dealtDamage);
                 this.usedScreamAttacks++;
-                FigtherReceivingDamage.hp -= dealtDamage;
+                fighterReceivingDamage.hp -= dealtDamage;
             }
             else
             {
@@ -120,34 +120,28 @@ public abstract class Participant
         }
         else
         {
-            //this section will be done later XD
-            //Debug.Log("Special "+ this.name + " HP: " + this.hp);
             this.usedSpecialAttacks++;
-            FigtherReceivingDamage.hp -= SpecialAbility();
+            fighterReceivingDamage.hp -= SpecialAbility(fighterReceivingDamage);
         }
     }
 
     //functions that are used by fighters
-    internal abstract int BasicAttack(Participant FighterReceivingDamage);
-    internal abstract int StrongAttack(Participant FighterReceivingDamage);
+    protected abstract int BasicAttack(Participant fighterReceivingDamage);
+    protected abstract int StrongAttack(Participant fighterReceivingDamage);
 
-    internal abstract int ScreamAttack(Participant FighterReceivingDamage);
+    protected abstract int ScreamAttack(Participant fighterReceivingDamage);
 
-    internal virtual int SpecialAbility()
+    protected abstract int SpecialAbility(Participant fighterReceivingDamage);
+
+    protected int Is_Favourite_Map()
     {
-        return 0;
-    }
-
-    public int Is_Favourite_Map()
-    {
-        if (this.favouriteMap==ButtonsScript.mapName)
+        if (this.favouriteMap == ButtonsScript.mapName)
         {
-            return 2;
+            return 5;
         }
         else
         {
             return 0;
         }
     }
-
 }

@@ -1,33 +1,78 @@
 using UnityEngine;
+using Random = System.Random;
 
 public class Duel : MonoBehaviour
 {
-    internal int DuelOfTheFates(Participant ManOne, Participant ManTwo)
+    internal int DuelOfTheFates(Participant manOne, Participant manTwo)
     {
-        Participant[] Fighter = new Participant[2];
-        //check which figher speed is higher and set him in table at index 0 so it moves first
-        if (ManOne.spd > ManTwo.spd)
+        Participant[] fighter = new Participant[2];
+        //check which fighter speed is higher and set him in table at index 0 so it moves first
+
+        Random random = new Random();
+        int whoIsFaster = random.Next(0, manOne.spd + manTwo.spd + 1);
+
+        if (whoIsFaster < manOne.spd)
         {
-            Fighter[0] = ManOne;
-            Fighter[1] = ManTwo;
+            fighter[0] = manOne;
+            fighter[1] = manTwo;
         }
         else
         {
-            Fighter[0] = ManTwo;
-            Fighter[1] = ManOne;
+            fighter[0] = manTwo;
+            fighter[1] = manOne;
         }
-        //when any particpants hp drops bellow or is equal to 0 return id of deafted fighter
+
+        //when any participants hp drops bellow or is equal to 0 return id of defeated fighter
         while (true)
         {
-            Fighter[0].Move(Fighter[1]);
-            if (Fighter[1].hp <= 0)
+            if (fighter[0] is Mage mage1 && mage1.burnEnemy > 0)
             {
-                return Fighter[1].id;
+                fighter[1].hp -= mage1.burnEnemy;
+                mage1.burnEnemy = 0;
             }
-            Fighter[1].Move(Fighter[0]); 
-            if (Fighter[0].hp <= 0)
+
+            fighter[0].Move(fighter[1]);
+            if (fighter[1].hp <= 0)
             {
-                return Fighter[0].id;
+                if (fighter[1] is Warrior warrior && warrior.isOnAdrenaline)
+                {
+                    warrior.isOnAdrenaline = false;
+                    fighter[1].hp = 1;
+                }
+                else
+                {
+                    return fighter[1].id;
+                }
+            }
+
+            if (fighter[1] is Mage mage2 && mage2.burnEnemy > 0)
+            {
+                fighter[0].hp -= mage2.burnEnemy;
+                mage2.burnEnemy = 0;
+            }
+
+            if (fighter[1] is Warrior warrior2)
+            {
+                warrior2.isOnAdrenaline = false;
+            }
+
+            fighter[1].Move(fighter[0]);
+            if (fighter[0].hp <= 0)
+            {
+                if (fighter[0] is Warrior warrior && warrior.isOnAdrenaline)
+                {
+                    warrior.isOnAdrenaline = false;
+                    fighter[0].hp = 1;
+                }
+                else
+                {
+                    return fighter[0].id;
+                }
+            }
+
+            if (fighter[0] is Warrior warrior3)
+            {
+                warrior3.isOnAdrenaline = false;
             }
         }
     }

@@ -15,11 +15,11 @@ MonoBehaviour:
   pName: Blanka
   pAbilityName: BEJBA ITS KAJDA KREJZA
   pSprite: {fileID: 21300000, guid: a8eb8af5e97a6c7409a6160939d1096c, type: 3}
-  pMaxHP: 400
-  pStrength: 2
-  pAgility: 10
-  pSpeed: 10
-  pWisdom: 16
+  pMaxHP: 250
+  pStrength: 4
+  pAgility: 14
+  pSpeed: 12
+  pWisdom: 10
   pCharisma: 17
   pCritChance: 15
   receivedDamage: 0

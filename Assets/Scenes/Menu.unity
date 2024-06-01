@@ -352,7 +352,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &100618342
 RectTransform:
   m_ObjectHideFlags: 0
@@ -483,7 +483,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 98787b679176aaf4b9308ff1234792bc, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -746,7 +746,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 020bcb8280b7cd1498602448dbcda712, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -1114,24 +1114,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 017cb42d2e4a3bd4785f279f8a6969ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MapList: []
-  MapImage: {fileID: 0}
+  mapList: []
+  mapImage: {fileID: 0}
   textPlace: {fileID: 0}
-  ChangeSceneSounds:
+  changeSceneSounds:
   - {fileID: 8300000, guid: 020bcb8280b7cd1498602448dbcda712, type: 3}
   - {fileID: 8300000, guid: 1636ee46d1e9a314aac71906f04523cd, type: 3}
-  - {fileID: 8300000, guid: c7858db1408f2d94c9b45775d73ce790, type: 3}
   - {fileID: 8300000, guid: cfc28ef44bbf9c14a90df76f054f4236, type: 3}
-  LeaveGameSounds:
+  leaveGameSounds:
   - {fileID: 8300000, guid: 98787b679176aaf4b9308ff1234792bc, type: 3}
   - {fileID: 8300000, guid: 43136f10dc4fd0844b8f079b76396d23, type: 3}
-  - {fileID: 8300000, guid: 2b4621f5a56e63847b4db50f596e253c, type: 3}
-  - {fileID: 8300000, guid: 2fed89f9384d67e4cb401076b80ddb78, type: 3}
-  CSSource: {fileID: 286917786}
-  QASource: {fileID: 113192237}
-  ReminderText: {fileID: 0}
+  csSource: {fileID: 286917786}
+  qsSource: {fileID: 113192237}
+  reminderText: {fileID: 0}
   simNumber: {fileID: 0}
-  StartSimButton: {fileID: 0}
+  startSimButton: {fileID: 0}
 --- !u!1 &509980940
 GameObject:
   m_ObjectHideFlags: 0
@@ -1167,8 +1164,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 914.7, y: 516.9}
-  m_SizeDelta: {x: 97.7868, y: 51.801}
+  m_AnchoredPosition: {x: 809.8993, y: 443.9}
+  m_SizeDelta: {x: 319.121, y: 201.925}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &509980942
 MonoBehaviour:
@@ -1221,8 +1218,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 15
-  m_fontSizeBase: 15
+  m_fontSize: 50
+  m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

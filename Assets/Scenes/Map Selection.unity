@@ -2178,24 +2178,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 017cb42d2e4a3bd4785f279f8a6969ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MapList:
+  mapList:
   - {fileID: 21300000, guid: cecea872b50a3f547857250350768941, type: 3}
   - {fileID: 21300000, guid: 39e879c7b267e3d4d81017e030b22fe2, type: 3}
   - {fileID: 21300000, guid: 1655bae9d2bca984e8b52e7f6ba77e0d, type: 3}
   - {fileID: 21300000, guid: 71649e6e4543451429e7fca1dbd188e6, type: 3}
+  - {fileID: 21300000, guid: f1bd5608687ce3e48ac54802ad16716f, type: 3}
   - {fileID: 21300000, guid: 6a310efc26f73864ea0132e8861815fc, type: 3}
   - {fileID: 21300000, guid: ea9d8a0df3348b14fa8ce01120842016, type: 3}
-  - {fileID: 21300000, guid: f1bd5608687ce3e48ac54802ad16716f, type: 3}
-  MapImage: {fileID: 429817915}
+  mapImage: {fileID: 429817915}
   textPlace: {fileID: 971526874}
-  ChangeSceneSounds:
+  changeSceneSounds:
   - {fileID: 8300000, guid: fa7d3d38ee79fc448b5612f7162d442f, type: 3}
-  LeaveGameSounds: []
-  CSSource: {fileID: 392944555}
-  QASource: {fileID: 0}
-  ReminderText: {fileID: 409408172}
+  leaveGameSounds:
+  - {fileID: 8300000, guid: 98787b679176aaf4b9308ff1234792bc, type: 3}
+  csSource: {fileID: 392944555}
+  qsSource: {fileID: 0}
+  reminderText: {fileID: 409408172}
   simNumber: {fileID: 212566968}
-  StartSimButton: {fileID: 1786261041}
+  startSimButton: {fileID: 1786261041}
 --- !u!114 &1426365887
 MonoBehaviour:
   m_ObjectHideFlags: 0

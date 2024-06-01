@@ -15,7 +15,7 @@ MonoBehaviour:
   pName: Giga Chad
   pAbilityName: Can you fix the broken
   pSprite: {fileID: 21300000, guid: 856e8be3db31223459bb061d012a284e, type: 3}
-  pMaxHP: 500
+  pMaxHP: 300
   pStrength: 19
   pAgility: 12
   pSpeed: 14
