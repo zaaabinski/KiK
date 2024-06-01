@@ -115,6 +115,18 @@ public class ButtonsScript : MonoBehaviour
         }
     }
 
+    public void MuteOrUnMute()
+    {
+        if (RepeatSimulation.musicSource.volume>0)
+        {
+            RepeatSimulation.musicSource.volume = 0;
+        }
+        else
+        {
+            RepeatSimulation.musicSource.volume = 1;
+        }
+    }
+
     IEnumerator Teleporting()
     {
         //loads scene with index 0 after playing sound
