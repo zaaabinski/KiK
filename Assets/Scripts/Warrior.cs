@@ -45,6 +45,8 @@ public class Warrior : Participant
               Random.Range(-((int)(this.strength / 2)), (int)(this.strength / 2)) +
               Enemy_is_Bard(fighterReceivingDamage) + Is_Favourite_Map();
         isOnAdrenaline = true;
+        this.dealtDamage += dmg;
+        fighterReceivingDamage.receivedDamage += dmg;
         return dmg;
     }
 

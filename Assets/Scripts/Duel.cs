@@ -28,6 +28,8 @@ public class Duel : MonoBehaviour
             if (fighter[0] is Mage mage1 && mage1.burnEnemy > 0)
             {
                 fighter[1].hp -= mage1.burnEnemy;
+                fighter[1].receivedDamage += mage1.burnEnemy;
+                fighter[0].dealtDamage+= mage1.burnEnemy;
                 mage1.burnEnemy = 0;
             }
 
@@ -48,6 +50,8 @@ public class Duel : MonoBehaviour
             if (fighter[1] is Mage mage2 && mage2.burnEnemy > 0)
             {
                 fighter[0].hp -= mage2.burnEnemy;
+                fighter[0].receivedDamage += mage2.burnEnemy;
+                fighter[1].dealtDamage += mage2.burnEnemy;
                 mage2.burnEnemy = 0;
             }
 

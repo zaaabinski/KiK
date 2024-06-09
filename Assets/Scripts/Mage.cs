@@ -45,6 +45,8 @@ public class Mage : Participant
               Random.Range(-((int)(this.wisdom / 2)), (int)(this.wisdom / 2)) +
               Enemy_is_Warrior(fighterReceivingDamage) + Is_Favourite_Map();
         burnEnemy = 20;
+        this.dealtDamage += dmg;
+        fighterReceivingDamage.receivedDamage += dmg;
         return dmg;
     }
 

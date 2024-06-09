@@ -65,6 +65,8 @@ public class Bard : Participant
         dmg = dmgBoost + 3 * (multiplierMainStat * this.charisma + multiplierOtherStat * this.spd) +
               Random.Range(-((int)(this.charisma / 2)), (int)(this.charisma / 2)) +
               Enemy_is_Rouge(fighterReceivingDamage) + Is_Favourite_Map();
+        this.dealtDamage += dmg;
+        fighterReceivingDamage.receivedDamage += dmg;
         return dmg;
     }
 
