@@ -299,7 +299,7 @@ public class Tournament : MonoBehaviour
             writer.WriteLine(idList[i] + ";" + tournamentList[i].name + ";" + tournamentList[i].receivedDamage + ";" +
                              tournamentList[i].dealtDamage + ";" + tournamentList[0].usedNormalAttacks + ";" +
                              tournamentList[0].usedStrongAttacks + ";" + tournamentList[0].usedScreamAttacks + ";" +
-                             tournamentList[0].usedSpecialAttacks + ";" + tournamentList[0].missedAttacks + ";"
+                             tournamentList[0].usedSpecialAttacks + ";" + tournamentList[0].missedAttacks + ";"+
                              ButtonsScript.mapName + ";" + (round + 1) + ";" + whomLosedTo.name + ";" + whomLosedTo.GetType().Name);
         }
     }
