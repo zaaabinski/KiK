@@ -44,6 +44,8 @@ public class Rouge : Participant
               Random.Range(-((int)(this.agility / 2)), (int)(this.agility / 2)) +
               Enemy_is_Mage(fighterReceivingDamage) + Is_Favourite_Map();
         Move(fighterReceivingDamage);
+        this.dealtDamage += dmg;
+        fighterReceivingDamage.receivedDamage += dmg;
         return dmg;
     }
 
