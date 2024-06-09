@@ -51,8 +51,8 @@ public abstract class Participant
         this.spd = obj.pSpeed;
         this.charisma = obj.pCharisma;
         this.critChance = obj.pCritChance;
-        this.receivedDamage = obj.receivedDamage;
-        this.dealtDamage = obj.dealtDamage;
+        this.receivedDamage =0;
+        this.dealtDamage = 0;
         this.favouriteMap = obj.favouriteMap;
         this.usedNormalAttacks = 0;
         this.usedStrongAttacks = 0;
