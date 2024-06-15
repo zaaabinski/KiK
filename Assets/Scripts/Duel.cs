@@ -29,7 +29,7 @@ public class Duel : MonoBehaviour
             {
                 fighter[1].hp -= mage1.burnEnemy;
                 fighter[1].receivedDamage += mage1.burnEnemy;
-                fighter[0].dealtDamage+= mage1.burnEnemy;
+                fighter[0].dealtDamage += mage1.burnEnemy;
                 mage1.burnEnemy = 0;
             }
 

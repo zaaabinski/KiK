@@ -11,7 +11,7 @@ public class Bard : Participant
     {
         int classAdvantage = EnemyIsRouge(fighterReceivingDamage);
         int mapAdvantage = IsFavouriteMap();
-        dmg = DamageCalculation(this.agility,this.spd, classAdvantage, mapAdvantage, fighterReceivingDamage);
+        dmg = DamageCalculation(this.agility, this.spd, classAdvantage, mapAdvantage, fighterReceivingDamage);
         if (dmgBoost == 0) return dmg;
         int temp = dmgBoost;
         dmgBoost = 0;
@@ -22,7 +22,7 @@ public class Bard : Participant
     {
         int classAdvantage = EnemyIsRouge(fighterReceivingDamage);
         int mapAdvantage = IsFavouriteMap();
-        dmg = 2 * DamageCalculation(this.agility, this.spd,classAdvantage, mapAdvantage, fighterReceivingDamage);
+        dmg = 2 * DamageCalculation(this.agility, this.spd, classAdvantage, mapAdvantage, fighterReceivingDamage);
         if (dmgBoost == 0) return dmg;
         int temp = dmgBoost;
         dmgBoost = 0;
@@ -33,7 +33,7 @@ public class Bard : Participant
     {
         int classAdvantage = EnemyIsRouge(fighterReceivingDamage);
         int mapAdvantage = IsFavouriteMap();
-        dmg = 2 * DamageCalculation(this.agility,0, classAdvantage, mapAdvantage, fighterReceivingDamage);
+        dmg = 2 * DamageCalculation(this.agility, 0, classAdvantage, mapAdvantage, fighterReceivingDamage);
         if (dmgBoost == 0) return dmg;
         int temp = dmgBoost;
         dmgBoost = 0;
@@ -45,7 +45,8 @@ public class Bard : Participant
         dmgBoost = 15;
         int classAdvantage = EnemyIsRouge(fighterReceivingDamage);
         int mapAdvantage = IsFavouriteMap();
-        dmg = dmgBoost + 3 * DamageCalculation(this.agility,this.spd, classAdvantage, mapAdvantage, fighterReceivingDamage);
+        dmg = dmgBoost +
+              3 * DamageCalculation(this.agility, this.spd, classAdvantage, mapAdvantage, fighterReceivingDamage);
         return dmg;
     }
 

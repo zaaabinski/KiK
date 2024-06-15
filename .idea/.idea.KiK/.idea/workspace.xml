@@ -7,10 +7,11 @@
     <list default="true" id="6bdc620f-1fb2-496d-9c6c-2140762a631b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.KiK/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.KiK/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Bard.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Bard.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Duel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Duel.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Mage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Mage.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Participant.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Participant.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Rouge.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Rouge.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Warrior.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Warrior.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ParticipantScriptable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ParticipantScriptable.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tournament.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tournament.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,6 +34,8 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "origin/code/final-touches",

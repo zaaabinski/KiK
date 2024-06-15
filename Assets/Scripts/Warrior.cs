@@ -11,7 +11,7 @@ public class Warrior : Participant
     {
         int classAdvantage = EnemyIsBard(fighterReceivingDamage);
         int mapAdvantage = IsFavouriteMap();
-        dmg = DamageCalculation(this.agility, this.spd,classAdvantage, mapAdvantage, fighterReceivingDamage);
+        dmg = DamageCalculation(this.agility, this.spd, classAdvantage, mapAdvantage, fighterReceivingDamage);
         return dmg;
     }
 
@@ -19,7 +19,7 @@ public class Warrior : Participant
     {
         int classAdvantage = EnemyIsBard(fighterReceivingDamage);
         int mapAdvantage = IsFavouriteMap();
-        dmg = 2 * DamageCalculation(this.agility,this.spd, classAdvantage, mapAdvantage, fighterReceivingDamage);
+        dmg = 2 * DamageCalculation(this.agility, this.spd, classAdvantage, mapAdvantage, fighterReceivingDamage);
         return dmg;
     }
 
@@ -27,7 +27,7 @@ public class Warrior : Participant
     {
         int classAdvantage = EnemyIsBard(fighterReceivingDamage);
         int mapAdvantage = IsFavouriteMap();
-        dmg = 2 * DamageCalculation(this.agility,0, classAdvantage, mapAdvantage, fighterReceivingDamage);
+        dmg = 2 * DamageCalculation(this.agility, 0, classAdvantage, mapAdvantage, fighterReceivingDamage);
         return dmg;
     }
 
@@ -35,7 +35,7 @@ public class Warrior : Participant
     {
         int classAdvantage = EnemyIsBard(fighterReceivingDamage);
         int mapAdvantage = IsFavouriteMap();
-        dmg = 2 * DamageCalculation(this.agility,this.spd, classAdvantage, mapAdvantage, fighterReceivingDamage);
+        dmg = 2 * DamageCalculation(this.agility, this.spd, classAdvantage, mapAdvantage, fighterReceivingDamage);
         isOnAdrenaline = true;
         return dmg;
     }

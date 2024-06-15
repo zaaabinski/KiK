@@ -43,8 +43,8 @@ public abstract class Participant
         this.name = obj.name;
         this.sprite = obj.pSprite;
         this.abilityName = obj.pAbilityName;
-        this.hp = obj.pMaxHP;
-        this.maxHP = obj.pMaxHP;
+        this.hp = obj.pMaxHp;
+        this.maxHP = obj.pMaxHp;
         this.strength = obj.pStrength;
         this.agility = obj.pAgility;
         this.wisdom = obj.pWisdom;

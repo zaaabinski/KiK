@@ -1,0 +1,21 @@
+Id postaci;Imie postaci;Otrzymane obrazenia;Zadane obrazenia;Użyte ataki podstawowe;Użyte silne ataki;Użyte ataki krzykiem;Użyte ataki specjalne;Ile spudłowano;Mapa;Runda;Z kim przegral;Z jaką klasa?
+12;Shrek;257;90;1;1;0;1;2;Kosmos;1;Gandalf;Mage
+0;Giga Chad;195;180;1;1;0;1;2;Kosmos;1;Rick Astley;Bard
+8;Pudzian;291;67;1;1;0;1;2;Kosmos;1;Pepe;Rouge
+4;Pies Chad;214;156;1;1;0;1;2;Kosmos;1;Konanowicz;Mage
+0;Giga Chad;337;126;1;2;1;1;2;Kosmos;1;Major;Rouge
+12;Shrek;286;116;1;2;1;1;2;Kosmos;1;Pudzian;Warrior
+4;Pies Chad;525;477;3;4;1;4;5;Kosmos;3;Blanka;Bard
+8;Pudzian;797;516;3;4;1;4;5;Kosmos;3;Pepe;Rouge
+12;Shrek;211;84;1;0;1;1;5;Kosmos;1;Konanowicz;Mage
+4;Pies Chad;173;119;1;0;1;1;5;Kosmos;1;Pepe;Rouge
+8;Pudzian;258;148;1;0;1;1;5;Kosmos;1;Gandalf;Mage
+0;Giga Chad;240;287;3;3;1;0;4;Kosmos;2;Palpatine;Mage
+12;Shrek;254;137;1;1;0;2;2;Kosmos;1;Giga Chad;Warrior
+8;Pudzian;207;121;1;1;0;2;2;Kosmos;1;Rick Astley;Bard
+4;Pies Chad;139;115;1;1;0;2;2;Kosmos;1;Nyan Cat;Bard
+0;Giga Chad;315;346;1;2;0;2;3;Kosmos;2;Rick Astley;Bard
+12;Shrek;265;59;1;0;1;0;4;Kosmos;1;Kurt Cobain;Bard
+4;Pies Chad;207;87;1;0;1;0;4;Kosmos;1;Ricardo Milos;Rouge
+0;Giga Chad;131;82;1;0;1;0;4;Kosmos;1;Rick Astley;Bard
+8;Pudzian;533;257;4;3;2;0;0;Kosmos;2;Nyan Cat;Bard

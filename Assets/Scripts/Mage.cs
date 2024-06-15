@@ -11,7 +11,7 @@ public class Mage : Participant
     {
         int classAdvantage = EnemyIsWarrior(fighterReceivingDamage);
         int mapAdvantage = IsFavouriteMap();
-        dmg = DamageCalculation(this.agility,this.spd, classAdvantage, mapAdvantage, fighterReceivingDamage);
+        dmg = DamageCalculation(this.agility, this.spd, classAdvantage, mapAdvantage, fighterReceivingDamage);
         return dmg;
     }
 
@@ -19,7 +19,7 @@ public class Mage : Participant
     {
         int classAdvantage = EnemyIsWarrior(fighterReceivingDamage);
         int mapAdvantage = IsFavouriteMap();
-        dmg = 2 * DamageCalculation(this.agility,this.spd, classAdvantage, mapAdvantage, fighterReceivingDamage);
+        dmg = 2 * DamageCalculation(this.agility, this.spd, classAdvantage, mapAdvantage, fighterReceivingDamage);
         return dmg;
     }
 
@@ -27,7 +27,7 @@ public class Mage : Participant
     {
         int classAdvantage = EnemyIsWarrior(fighterReceivingDamage);
         int mapAdvantage = IsFavouriteMap();
-        dmg = 2 * DamageCalculation(this.agility,0, classAdvantage, mapAdvantage, fighterReceivingDamage);
+        dmg = 2 * DamageCalculation(this.agility, 0, classAdvantage, mapAdvantage, fighterReceivingDamage);
         return dmg;
     }
 
@@ -35,7 +35,7 @@ public class Mage : Participant
     {
         int classAdvantage = EnemyIsWarrior(fighterReceivingDamage);
         int mapAdvantage = IsFavouriteMap();
-        dmg = 2 * DamageCalculation(this.agility,this.spd, classAdvantage, mapAdvantage, fighterReceivingDamage);
+        dmg = 2 * DamageCalculation(this.agility, this.spd, classAdvantage, mapAdvantage, fighterReceivingDamage);
         burnEnemy = 20;
         return dmg;
     }
