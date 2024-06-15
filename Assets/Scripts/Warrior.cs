@@ -13,7 +13,7 @@ public class Warrior : Participant
     {
         dmg = multiplierMainStat * this.strength + multiplierOtherStat * this.spd +
               Random.Range(-((int)(this.strength / 2)), (int)(this.strength / 2)) +
-              Enemy_is_Bard(fighterReceivingDamage) + Is_Favourite_Map();
+              EnemyIsBard(fighterReceivingDamage) + IsFavouriteMap();
         this.dealtDamage += dmg;
         fighterReceivingDamage.receivedDamage += dmg;
         return dmg;
@@ -23,7 +23,7 @@ public class Warrior : Participant
     {
         dmg = 2 * (multiplierMainStat * this.strength + multiplierOtherStat * this.spd) +
               Random.Range(-((int)(this.strength / 2)), (int)(this.strength / 2)) +
-              Enemy_is_Bard(fighterReceivingDamage) + Is_Favourite_Map();
+              EnemyIsBard(fighterReceivingDamage) + IsFavouriteMap();
         this.dealtDamage += dmg;
         fighterReceivingDamage.receivedDamage += dmg;
         return dmg;
@@ -33,7 +33,7 @@ public class Warrior : Participant
     {
         dmg = multiplierOtherStat * this.charisma +
               Random.Range(-((int)(this.charisma / 2)), (int)(this.charisma / 2)) +
-              Enemy_is_Bard(fighterReceivingDamage) + Is_Favourite_Map();
+              EnemyIsBard(fighterReceivingDamage) + IsFavouriteMap();
         this.dealtDamage += dmg;
         fighterReceivingDamage.receivedDamage += dmg;
         return dmg;
@@ -43,7 +43,7 @@ public class Warrior : Participant
     {
         dmg = 2 * (multiplierMainStat * this.strength + multiplierOtherStat * this.spd) +
               Random.Range(-((int)(this.strength / 2)), (int)(this.strength / 2)) +
-              Enemy_is_Bard(fighterReceivingDamage) + Is_Favourite_Map();
+              EnemyIsBard(fighterReceivingDamage) + IsFavouriteMap();
         isOnAdrenaline = true;
         this.dealtDamage += dmg;
         fighterReceivingDamage.receivedDamage += dmg;
@@ -51,7 +51,7 @@ public class Warrior : Participant
     }
 
     //check if enemy is a class that takes more dmg
-    int Enemy_is_Bard(Participant fighterReceivingDamage)
+    int EnemyIsBard(Participant fighterReceivingDamage)
     {
         if (fighterReceivingDamage is Bard)
         {

@@ -12,7 +12,7 @@ public class Rouge : Participant
     {
         dmg = multiplierMainStat * this.agility + multiplierOtherStat * this.spd +
               Random.Range(-((int)(this.agility / 2)), (int)(this.agility / 2)) +
-              Enemy_is_Mage(fighterReceivingDamage) + Is_Favourite_Map();
+              EnemyIsMage(fighterReceivingDamage) + IsFavouriteMap();
         this.dealtDamage += dmg;
         fighterReceivingDamage.receivedDamage += dmg;
         return dmg;
@@ -22,7 +22,7 @@ public class Rouge : Participant
     {
         dmg = 2 * (multiplierMainStat * this.agility + multiplierOtherStat * this.spd) +
               Random.Range(-((int)(this.agility / 2)), (int)(this.agility / 2)) +
-              Enemy_is_Mage(fighterReceivingDamage) + Is_Favourite_Map();
+              EnemyIsMage(fighterReceivingDamage) + IsFavouriteMap();
         this.dealtDamage += dmg;
         fighterReceivingDamage.receivedDamage += dmg;
         return dmg;
@@ -32,7 +32,7 @@ public class Rouge : Participant
     {
         dmg = multiplierOtherStat * this.charisma +
               Random.Range(-((int)(this.charisma / 2)), (int)(this.charisma / 2)) +
-              Enemy_is_Mage(fighterReceivingDamage) + Is_Favourite_Map();
+              EnemyIsMage(fighterReceivingDamage) + IsFavouriteMap();
         this.dealtDamage += dmg;
         fighterReceivingDamage.receivedDamage += dmg;
         return dmg;
@@ -42,7 +42,7 @@ public class Rouge : Participant
     {
         dmg = 3 * (multiplierMainStat * this.agility + multiplierOtherStat * this.spd) +
               Random.Range(-((int)(this.agility / 2)), (int)(this.agility / 2)) +
-              Enemy_is_Mage(fighterReceivingDamage) + Is_Favourite_Map();
+              EnemyIsMage(fighterReceivingDamage) + IsFavouriteMap();
         Move(fighterReceivingDamage);
         this.dealtDamage += dmg;
         fighterReceivingDamage.receivedDamage += dmg;
@@ -50,7 +50,7 @@ public class Rouge : Participant
     }
 
     //check if enemy is a class that takes more dmg
-    int Enemy_is_Mage(Participant fighterReceivingDamage)
+    int EnemyIsMage(Participant fighterReceivingDamage)
     {
         if (fighterReceivingDamage is Mage)
         {

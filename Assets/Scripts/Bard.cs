@@ -13,7 +13,7 @@ public class Bard : Participant
     {
         dmg = multiplierMainStat * this.charisma + multiplierOtherStat * this.spd +
               Random.Range(-((int)(this.charisma / 2)), (int)(this.charisma / 2)) +
-              Enemy_is_Rouge(fighterReceivingDamage) + Is_Favourite_Map();
+              EnemyIsRouge(fighterReceivingDamage) + IsFavouriteMap();
         this.dealtDamage += dmg;
         fighterReceivingDamage.receivedDamage += dmg;
         if (dmgBoost != 0)
@@ -30,7 +30,7 @@ public class Bard : Participant
     {
         dmg = 2 * (multiplierMainStat * this.charisma + multiplierOtherStat * this.spd) +
               Random.Range(-((int)(this.charisma / 2)), (int)(this.charisma / 2)) +
-              Enemy_is_Rouge(fighterReceivingDamage) + Is_Favourite_Map();
+              EnemyIsRouge(fighterReceivingDamage) + IsFavouriteMap();
         this.dealtDamage += dmg;
         fighterReceivingDamage.receivedDamage += dmg;
         if (dmgBoost != 0)
@@ -46,7 +46,7 @@ public class Bard : Participant
     protected override int ScreamAttack(Participant fighterReceivingDamage)
     {
         dmg = multiplierMainStat * this.charisma + Random.Range(-((int)(this.charisma / 2)), (int)(this.charisma / 2)) +
-              Enemy_is_Rouge(fighterReceivingDamage) + Is_Favourite_Map();
+              EnemyIsRouge(fighterReceivingDamage) + IsFavouriteMap();
         this.dealtDamage += dmg;
         fighterReceivingDamage.receivedDamage += dmg;
         if (dmgBoost != 0)
@@ -64,20 +64,20 @@ public class Bard : Participant
         dmgBoost = 15;
         dmg = dmgBoost + 3 * (multiplierMainStat * this.charisma + multiplierOtherStat * this.spd) +
               Random.Range(-((int)(this.charisma / 2)), (int)(this.charisma / 2)) +
-              Enemy_is_Rouge(fighterReceivingDamage) + Is_Favourite_Map();
+              EnemyIsRouge(fighterReceivingDamage) + IsFavouriteMap();
         this.dealtDamage += dmg;
         fighterReceivingDamage.receivedDamage += dmg;
         return dmg;
     }
 
     //check if enemy is a class that takes more dmg
-    int Enemy_is_Rouge(Participant fighterReceivingDamage)
+    int EnemyIsRouge(Participant fighterReceivingDamage)
     {
         if (fighterReceivingDamage is Rouge)
         {
             return 5;
         }
-
         return 0;
     }
+    
 }

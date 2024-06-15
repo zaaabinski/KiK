@@ -133,7 +133,7 @@ public abstract class Participant
 
     protected abstract int SpecialAbility(Participant fighterReceivingDamage);
 
-    protected int Is_Favourite_Map()
+    protected int IsFavouriteMap()
     {
         if (this.favouriteMap == ButtonsScript.mapName)
         {

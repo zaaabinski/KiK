@@ -13,7 +13,7 @@ public class Mage : Participant
     {
         dmg = multiplierMainStat * this.wisdom + multiplierOtherStat * this.spd +
               Random.Range(-((int)(this.wisdom / 2)), (int)(this.wisdom / 2)) +
-              Enemy_is_Warrior(fighterReceivingDamage) + Is_Favourite_Map();
+              EnemyIsWarrior(fighterReceivingDamage) + IsFavouriteMap();
         this.dealtDamage += dmg;
         fighterReceivingDamage.receivedDamage += dmg;
         return dmg;
@@ -23,7 +23,7 @@ public class Mage : Participant
     {
         dmg = 2 * (multiplierMainStat * this.wisdom + multiplierOtherStat * this.spd) +
               Random.Range(-((int)(this.wisdom / 2)), (int)(this.wisdom / 2)) +
-              Enemy_is_Warrior(fighterReceivingDamage) + Is_Favourite_Map();
+              EnemyIsWarrior(fighterReceivingDamage) + IsFavouriteMap();
         this.dealtDamage += dmg;
         fighterReceivingDamage.receivedDamage += dmg;
         return dmg;
@@ -33,7 +33,7 @@ public class Mage : Participant
     {
         dmg = multiplierOtherStat * this.charisma +
               Random.Range(-((int)(this.charisma / 2)), (int)(this.charisma / 2)) +
-              Enemy_is_Warrior(fighterReceivingDamage) + Is_Favourite_Map();
+              EnemyIsWarrior(fighterReceivingDamage) + IsFavouriteMap();
         this.dealtDamage += dmg;
         fighterReceivingDamage.receivedDamage += dmg;
         return dmg;
@@ -43,7 +43,7 @@ public class Mage : Participant
     {
         dmg = 2 * (multiplierMainStat * this.wisdom + multiplierOtherStat * this.spd) +
               Random.Range(-((int)(this.wisdom / 2)), (int)(this.wisdom / 2)) +
-              Enemy_is_Warrior(fighterReceivingDamage) + Is_Favourite_Map();
+              EnemyIsWarrior(fighterReceivingDamage) + IsFavouriteMap();
         burnEnemy = 20;
         this.dealtDamage += dmg;
         fighterReceivingDamage.receivedDamage += dmg;
@@ -51,7 +51,7 @@ public class Mage : Participant
     }
 
     //check if enemy is a class that takes more dmg
-    int Enemy_is_Warrior(Participant fighterReceivingDamage)
+    int EnemyIsWarrior(Participant fighterReceivingDamage)
     {
         if (fighterReceivingDamage is Warrior)
         {

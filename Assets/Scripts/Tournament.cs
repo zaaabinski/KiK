@@ -337,7 +337,7 @@ public class Tournament : MonoBehaviour
         RepeatSimulation.loopCounter++;
         if (RepeatSimulation.loopCounter < RepeatSimulation.howManyLoops)
         {
-            yield return new WaitForSeconds(0);
+            yield return new WaitForSeconds(0.005f);
             SceneManager.LoadScene(2);
             simcounterText.text = RepeatSimulation.loopCounter.ToString();
         }
