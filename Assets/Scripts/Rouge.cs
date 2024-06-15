@@ -1,6 +1,3 @@
-using Unity.VisualScripting;
-using UnityEngine;
-
 public class Rouge : Participant
 {
     internal Rouge(ParticipantScriptable pS) : base(pS)
@@ -10,42 +7,34 @@ public class Rouge : Participant
     //all the functions bellow override basic functions from participant class, they calculate dmg and return its value
     protected override int BasicAttack(Participant fighterReceivingDamage)
     {
-        dmg = multiplierMainStat * this.agility + multiplierOtherStat * this.spd +
-              Random.Range(-((int)(this.agility / 2)), (int)(this.agility / 2)) +
-              EnemyIsMage(fighterReceivingDamage) + IsFavouriteMap();
-        this.dealtDamage += dmg;
-        fighterReceivingDamage.receivedDamage += dmg;
+        int classAdvantage = EnemyIsMage(fighterReceivingDamage);
+        int mapAdvantage = IsFavouriteMap();
+        dmg = DamageCalculation(this.agility,this.spd, classAdvantage,mapAdvantage,fighterReceivingDamage);
         return dmg;
     }
 
     protected override int StrongAttack(Participant fighterReceivingDamage)
     {
-        dmg = 2 * (multiplierMainStat * this.agility + multiplierOtherStat * this.spd) +
-              Random.Range(-((int)(this.agility / 2)), (int)(this.agility / 2)) +
-              EnemyIsMage(fighterReceivingDamage) + IsFavouriteMap();
-        this.dealtDamage += dmg;
-        fighterReceivingDamage.receivedDamage += dmg;
+        int classAdvantage = EnemyIsMage(fighterReceivingDamage);
+        int mapAdvantage = IsFavouriteMap();
+        dmg = 2 * DamageCalculation(this.agility,this.spd, classAdvantage, mapAdvantage, fighterReceivingDamage);
         return dmg;
     }
 
     protected override int ScreamAttack(Participant fighterReceivingDamage)
     {
-        dmg = multiplierOtherStat * this.charisma +
-              Random.Range(-((int)(this.charisma / 2)), (int)(this.charisma / 2)) +
-              EnemyIsMage(fighterReceivingDamage) + IsFavouriteMap();
-        this.dealtDamage += dmg;
-        fighterReceivingDamage.receivedDamage += dmg;
+        int classAdvantage = EnemyIsMage(fighterReceivingDamage);
+        int mapAdvantage = IsFavouriteMap();
+        dmg = 2 * DamageCalculation(this.agility,0, classAdvantage, mapAdvantage, fighterReceivingDamage);
         return dmg;
     }
 
     protected override int SpecialAbility(Participant fighterReceivingDamage)
     {
-        dmg = 3 * (multiplierMainStat * this.agility + multiplierOtherStat * this.spd) +
-              Random.Range(-((int)(this.agility / 2)), (int)(this.agility / 2)) +
-              EnemyIsMage(fighterReceivingDamage) + IsFavouriteMap();
+        int classAdvantage = EnemyIsMage(fighterReceivingDamage);
+        int mapAdvantage = IsFavouriteMap();
+        dmg = 2 * DamageCalculation(this.agility, this.spd,classAdvantage, mapAdvantage, fighterReceivingDamage);
         Move(fighterReceivingDamage);
-        this.dealtDamage += dmg;
-        fighterReceivingDamage.receivedDamage += dmg;
         return dmg;
     }
 
@@ -56,7 +45,6 @@ public class Rouge : Participant
         {
             return 5;
         }
-
         return 0;
     }
 }
