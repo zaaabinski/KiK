@@ -43,15 +43,15 @@ public abstract class Participant
         this.name = obj.name;
         this.sprite = obj.pSprite;
         this.abilityName = obj.pAbilityName;
-        this.hp = obj.pMaxHP;
-        this.maxHP = obj.pMaxHP;
+        this.hp = obj.pMaxHp;
+        this.maxHP = obj.pMaxHp;
         this.strength = obj.pStrength;
         this.agility = obj.pAgility;
         this.wisdom = obj.pWisdom;
         this.spd = obj.pSpeed;
         this.charisma = obj.pCharisma;
         this.critChance = obj.pCritChance;
-        this.receivedDamage =0;
+        this.receivedDamage = 0;
         this.dealtDamage = 0;
         this.favouriteMap = obj.favouriteMap;
         this.usedNormalAttacks = 0;
@@ -76,13 +76,11 @@ public abstract class Participant
             if (hitChance <= this.agility * 5)
             {
                 dealtDamage = BasicAttack(fighterReceivingDamage);
-                //Debug.Log("Basic " + this.name + " HP: " + this.hp + " Damage " + dealtDamage);
                 this.usedNormalAttacks++;
                 fighterReceivingDamage.hp -= dealtDamage;
             }
             else
             {
-                //Debug.Log("Miss! " + this.name + " HP: " + this.hp);
                 this.missedAttacks++;
             }
         }
@@ -92,13 +90,11 @@ public abstract class Participant
             if (hitChance <= this.agility * 4)
             {
                 dealtDamage = StrongAttack(fighterReceivingDamage);
-                //Debug.Log("Strong "+ this.name + " HP: " + this.hp + " Damage " + dealtDamage);
                 this.usedStrongAttacks++;
                 fighterReceivingDamage.hp -= dealtDamage;
             }
             else
             {
-                //Debug.Log("Miss! " + this.name + " HP: " + this.hp);
                 this.missedAttacks++;
             }
         }
@@ -108,13 +104,11 @@ public abstract class Participant
             if (hitChance <= this.agility * 5)
             {
                 dealtDamage = ScreamAttack(fighterReceivingDamage);
-                //Debug.Log("Scream "+ this.name + " HP: "+this.hp+ " Damage " + dealtDamage);
                 this.usedScreamAttacks++;
                 fighterReceivingDamage.hp -= dealtDamage;
             }
             else
             {
-                //Debug.Log("Miss! " + this.name + " HP: " + this.hp);
                 this.missedAttacks++;
             }
         }
@@ -126,6 +120,16 @@ public abstract class Participant
     }
 
     //functions that are used by fighters
+    protected int DamageCalculation(int mainStat, int secondStat, int strongAgainst, int mapDmg, Participant fighterReceivingDamage)
+    {
+        dmg = multiplierMainStat * mainStat + multiplierOtherStat * secondStat +
+              Random.Range(-((int)(mainStat / 2)), (int)(mainStat / 2)) +
+              +strongAgainst + mapDmg;
+        this.dealtDamage += dmg;
+        fighterReceivingDamage.receivedDamage += dmg;
+        return dmg;
+    }
+
     protected abstract int BasicAttack(Participant fighterReceivingDamage);
     protected abstract int StrongAttack(Participant fighterReceivingDamage);
 
@@ -133,7 +137,7 @@ public abstract class Participant
 
     protected abstract int SpecialAbility(Participant fighterReceivingDamage);
 
-    protected int Is_Favourite_Map()
+    protected int IsFavouriteMap()
     {
         if (this.favouriteMap == ButtonsScript.mapName)
         {

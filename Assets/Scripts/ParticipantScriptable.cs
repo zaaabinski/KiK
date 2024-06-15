@@ -6,7 +6,7 @@ public class ParticipantScriptable : ScriptableObject
     public string pName;
     public string pAbilityName;
     public Sprite pSprite;
-    public int pMaxHP;
+    public int pMaxHp;
     public int pStrength;
     public int pAgility;
     public int pSpeed;
